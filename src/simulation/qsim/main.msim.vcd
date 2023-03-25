@@ -1,0 +1,56 @@
+$comment
+	File created using the following command:
+		vcd file main.msim.vcd -direction
+$end
+$date
+	Sat Mar 25 13:58:35 2023
+$end
+$version
+	ModelSim Version 2020.1
+$end
+$timescale
+	1ps
+$end
+
+$scope module test_script_vlg_vec_tst $end
+$var reg 4 ! button [3:0] $end
+$var reg 1 " clk $end
+$var wire 1 # S $end
+
+$scope module i1 $end
+$var wire 1 $ gnd $end
+$var wire 1 % vcc $end
+$var wire 1 & unknown $end
+$var tri1 1 ' devclrn $end
+$var tri1 1 ( devpor $end
+$var tri1 1 ) devoe $end
+$var wire 1 * clk~input_o $end
+$var wire 1 + button[1]~input_o $end
+$var wire 1 , button[2]~input_o $end
+$var wire 1 - button[3]~input_o $end
+$var wire 1 . S~output_o $end
+$var wire 1 / button[0]~input_o $end
+$var wire 1 0 S~reg0_q $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b100 !
+0"
+0#
+0$
+1%
+x&
+1'
+1(
+1)
+0*
+0+
+1,
+0-
+0.
+0/
+00
+$end
+#1000000

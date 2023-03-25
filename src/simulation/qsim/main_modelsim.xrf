@@ -1,0 +1,15 @@
+vendor_name = ModelSim
+source_file = 1, /home/lypess/Documentos/stopwatch-calculator/src/main.v
+source_file = 1, /home/lypess/Documentos/stopwatch-calculator/src/display.v
+source_file = 1, /home/lypess/Documentos/stopwatch-calculator/src/keypad.v
+source_file = 1, /home/lypess/Documentos/stopwatch-calculator/src/test_script.v
+source_file = 1, /home/lypess/Documentos/stopwatch-calculator/src/Waveform.vwf
+source_file = 1, /home/lypess/Documentos/stopwatch-calculator/src/db/main.cbx.xml
+design_name = test_script
+instance = comp, \S~output , S~output, test_script, 1
+instance = comp, \button[0]~input , button[0]~input, test_script, 1
+instance = comp, \S~reg0 , S~reg0, test_script, 1
+instance = comp, \clk~input , clk~input, test_script, 1
+instance = comp, \button[1]~input , button[1]~input, test_script, 1
+instance = comp, \button[2]~input , button[2]~input, test_script, 1
+instance = comp, \button[3]~input , button[3]~input, test_script, 1

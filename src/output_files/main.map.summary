@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Fri Mar 24 00:02:01 2023
+Analysis & Synthesis Status : Successful - Sat Mar 25 15:12:08 2023
 Quartus Prime Version : 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 Revision Name : main
 Top-level Entity Name : keypad
 Family : Cyclone IV E
-Total logic elements : 80
-    Total combinational functions : 80
-    Dedicated logic registers : 44
-Total registers : 44
+Total logic elements : 48
+    Total combinational functions : 48
+    Dedicated logic registers : 36
+Total registers : 36
 Total pins : 13
 Total virtual pins : 0
 Total memory bits : 0

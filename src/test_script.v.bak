@@ -1,0 +1,10 @@
+module test_script(input clk, input[3:0] button, output S);
+	initial begin
+		S = 0;
+	end
+	
+	always @ (posedge button) begin
+		S = 1;
+	end
+	
+endmodule 

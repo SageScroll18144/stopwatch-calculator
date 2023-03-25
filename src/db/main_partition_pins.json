@@ -20,39 +20,39 @@
 					"strict" : false
 				},
 				{
-					"name" : "L[1]",
-					"strict" : false
-				},
-				{
-					"name" : "C[0]",
-					"strict" : false
-				},
-				{
-					"name" : "C[3]",
-					"strict" : false
-				},
-				{
-					"name" : "C[2]",
-					"strict" : false
-				},
-				{
-					"name" : "C[1]",
-					"strict" : false
-				},
-				{
-					"name" : "L[2]",
-					"strict" : false
-				},
-				{
-					"name" : "L[0]",
-					"strict" : false
-				},
-				{
-					"name" : "L[3]",
-					"strict" : false
-				},
-				{
 					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "COLLUMMN[0]",
+					"strict" : false
+				},
+				{
+					"name" : "COLLUMMN[2]",
+					"strict" : false
+				},
+				{
+					"name" : "COLLUMMN[1]",
+					"strict" : false
+				},
+				{
+					"name" : "COLLUMMN[3]",
+					"strict" : false
+				},
+				{
+					"name" : "LINE[0]",
+					"strict" : false
+				},
+				{
+					"name" : "LINE[2]",
+					"strict" : false
+				},
+				{
+					"name" : "LINE[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LINE[3]",
 					"strict" : false
 				}
 			]

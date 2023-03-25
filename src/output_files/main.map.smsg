@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at keypad.v(68): always construct contains both blocking and non-blocking assignments File: /home/lypess/Documentos/stopwatch-calculator/src/keypad.v Line: 68

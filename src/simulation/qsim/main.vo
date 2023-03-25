@@ -1,0 +1,137 @@
+// Copyright (C) 2020  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and any partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details, at
+// https://fpgasoftware.intel.com/eula.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus Prime"
+// VERSION "Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition"
+
+// DATE "03/25/2023 13:58:34"
+
+// 
+// Device: Altera EP4CE115F29C7 Package FBGA780
+// 
+
+// 
+// This Verilog file should be used for ModelSim-Altera (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module test_script (
+	clk,
+	button,
+	S);
+input 	clk;
+input 	[3:0] button;
+output 	S;
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+wire \clk~input_o ;
+wire \button[1]~input_o ;
+wire \button[2]~input_o ;
+wire \button[3]~input_o ;
+wire \S~output_o ;
+wire \button[0]~input_o ;
+wire \S~reg0_q ;
+
+
+cycloneive_io_obuf \S~output (
+	.i(\S~reg0_q ),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\S~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \S~output .bus_hold = "false";
+defparam \S~output .open_drain_output = "false";
+// synopsys translate_on
+
+cycloneive_io_ibuf \button[0]~input (
+	.i(button[0]),
+	.ibar(gnd),
+	.o(\button[0]~input_o ));
+// synopsys translate_off
+defparam \button[0]~input .bus_hold = "false";
+defparam \button[0]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+dffeas \S~reg0 (
+	.clk(\button[0]~input_o ),
+	.d(vcc),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\S~reg0_q ),
+	.prn(vcc));
+// synopsys translate_off
+defparam \S~reg0 .is_wysiwyg = "true";
+defparam \S~reg0 .power_up = "low";
+// synopsys translate_on
+
+cycloneive_io_ibuf \clk~input (
+	.i(clk),
+	.ibar(gnd),
+	.o(\clk~input_o ));
+// synopsys translate_off
+defparam \clk~input .bus_hold = "false";
+defparam \clk~input .simulate_z_as = "z";
+// synopsys translate_on
+
+cycloneive_io_ibuf \button[1]~input (
+	.i(button[1]),
+	.ibar(gnd),
+	.o(\button[1]~input_o ));
+// synopsys translate_off
+defparam \button[1]~input .bus_hold = "false";
+defparam \button[1]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+cycloneive_io_ibuf \button[2]~input (
+	.i(button[2]),
+	.ibar(gnd),
+	.o(\button[2]~input_o ));
+// synopsys translate_off
+defparam \button[2]~input .bus_hold = "false";
+defparam \button[2]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+cycloneive_io_ibuf \button[3]~input (
+	.i(button[3]),
+	.ibar(gnd),
+	.o(\button[3]~input_o ));
+// synopsys translate_off
+defparam \button[3]~input .bus_hold = "false";
+defparam \button[3]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+assign S = \S~output_o ;
+
+endmodule
