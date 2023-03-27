@@ -1,4 +1,4 @@
-module stopwatch(input clk, output[31:0] reg seconds, output[31:0] reg m_seconds);
+module stopwatch(input clk, output reg[31:0] seconds, output reg[31:0] m_seconds);
 	
 	initial begin
 		seconds = 0;
