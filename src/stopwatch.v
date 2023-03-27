@@ -24,7 +24,7 @@ module stopwatch(input clk, output reg[31:0] seconds, output reg[31:0] m_seconds
 	end
 	
 	always @ (posedge clk) begin
-		if(m_sec_cnt < clk_machine) begin
+		if(m_sec_cnt < clk_machine / 100) begin
 			m_sec_cnt <= m_sec_cnt + 1;
 		end
 		else begin 
