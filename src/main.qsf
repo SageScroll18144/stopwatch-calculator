@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone IV E"
 set_global_assignment -name DEVICE EP4CE115F29C7
-set_global_assignment -name TOP_LEVEL_ENTITY keypad
+set_global_assignment -name TOP_LEVEL_ENTITY main
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "23:09:22  MARCH 23, 2023"
 set_global_assignment -name LAST_QUARTUS_VERSION "20.1.0 Lite Edition"
@@ -60,8 +60,37 @@ set_global_assignment -name VERILOG_FILE display.v
 set_global_assignment -name VERILOG_FILE keypad.v
 set_global_assignment -name VERILOG_FILE test_script.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
+set_global_assignment -name VERILOG_FILE stopwatch.v
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name VERILOG_FILE stopwatch.v
+set_location_assignment PIN_V21 -to display_centenas[0]
+set_location_assignment PIN_U21 -to display_centenas[1]
+set_location_assignment PIN_AB20 -to display_centenas[2]
+set_location_assignment PIN_AA21 -to display_centenas[3]
+set_location_assignment PIN_AD24 -to display_centenas[4]
+set_location_assignment PIN_AF23 -to display_centenas[5]
+set_location_assignment PIN_Y19 -to display_centenas[6]
+set_location_assignment PIN_AA25 -to display_dezenas[0]
+set_location_assignment PIN_AA26 -to display_dezenas[1]
+set_location_assignment PIN_Y25 -to display_dezenas[2]
+set_location_assignment PIN_W26 -to display_dezenas[3]
+set_location_assignment PIN_Y26 -to display_dezenas[4]
+set_location_assignment PIN_W27 -to display_dezenas[5]
+set_location_assignment PIN_W28 -to display_dezenas[6]
+set_location_assignment PIN_M24 -to display_unidades[0]
+set_location_assignment PIN_Y22 -to display_unidades[1]
+set_location_assignment PIN_W21 -to display_unidades[2]
+set_location_assignment PIN_W22 -to display_unidades[3]
+set_location_assignment PIN_W25 -to display_unidades[4]
+set_location_assignment PIN_U23 -to display_unidades[5]
+set_location_assignment PIN_U24 -to display_unidades[6]
+set_location_assignment PIN_G18 -to display_m_seconds[0]
+set_location_assignment PIN_F22 -to display_m_seconds[1]
+set_location_assignment PIN_E17 -to display_m_seconds[2]
+set_location_assignment PIN_L26 -to display_m_seconds[3]
+set_location_assignment PIN_L25 -to display_m_seconds[4]
+set_location_assignment PIN_J22 -to display_m_seconds[5]
+set_location_assignment PIN_H22 -to display_m_seconds[6]
+set_location_assignment PIN_Y2 -to clk
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
