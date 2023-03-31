@@ -1,68 +1,4 @@
-|main
-clk => clk.IN1
-seconds[0] <= stopwatch:comb_3.port1
-seconds[1] <= stopwatch:comb_3.port1
-seconds[2] <= stopwatch:comb_3.port1
-seconds[3] <= stopwatch:comb_3.port1
-seconds[4] <= stopwatch:comb_3.port1
-seconds[5] <= stopwatch:comb_3.port1
-seconds[6] <= stopwatch:comb_3.port1
-seconds[7] <= stopwatch:comb_3.port1
-seconds[8] <= stopwatch:comb_3.port1
-seconds[9] <= stopwatch:comb_3.port1
-seconds[10] <= stopwatch:comb_3.port1
-seconds[11] <= stopwatch:comb_3.port1
-seconds[12] <= stopwatch:comb_3.port1
-seconds[13] <= stopwatch:comb_3.port1
-seconds[14] <= stopwatch:comb_3.port1
-seconds[15] <= stopwatch:comb_3.port1
-seconds[16] <= stopwatch:comb_3.port1
-seconds[17] <= stopwatch:comb_3.port1
-seconds[18] <= stopwatch:comb_3.port1
-seconds[19] <= stopwatch:comb_3.port1
-seconds[20] <= stopwatch:comb_3.port1
-seconds[21] <= stopwatch:comb_3.port1
-seconds[22] <= stopwatch:comb_3.port1
-seconds[23] <= stopwatch:comb_3.port1
-seconds[24] <= stopwatch:comb_3.port1
-seconds[25] <= stopwatch:comb_3.port1
-seconds[26] <= stopwatch:comb_3.port1
-seconds[27] <= stopwatch:comb_3.port1
-seconds[28] <= stopwatch:comb_3.port1
-seconds[29] <= stopwatch:comb_3.port1
-seconds[30] <= stopwatch:comb_3.port1
-seconds[31] <= stopwatch:comb_3.port1
-display_centenas[6] <= display:comb_10.port1
-display_centenas[5] <= display:comb_10.port1
-display_centenas[4] <= display:comb_10.port1
-display_centenas[3] <= display:comb_10.port1
-display_centenas[2] <= display:comb_10.port1
-display_centenas[1] <= display:comb_10.port1
-display_centenas[0] <= display:comb_10.port1
-display_dezenas[6] <= display:comb_11.port1
-display_dezenas[5] <= display:comb_11.port1
-display_dezenas[4] <= display:comb_11.port1
-display_dezenas[3] <= display:comb_11.port1
-display_dezenas[2] <= display:comb_11.port1
-display_dezenas[1] <= display:comb_11.port1
-display_dezenas[0] <= display:comb_11.port1
-display_unidades[6] <= display:comb_12.port1
-display_unidades[5] <= display:comb_12.port1
-display_unidades[4] <= display:comb_12.port1
-display_unidades[3] <= display:comb_12.port1
-display_unidades[2] <= display:comb_12.port1
-display_unidades[1] <= display:comb_12.port1
-display_unidades[0] <= display:comb_12.port1
-display_m_seconds[6] <= display:comb_13.port1
-display_m_seconds[5] <= display:comb_13.port1
-display_m_seconds[4] <= display:comb_13.port1
-display_m_seconds[3] <= display:comb_13.port1
-display_m_seconds[2] <= display:comb_13.port1
-display_m_seconds[1] <= display:comb_13.port1
-display_m_seconds[0] <= display:comb_13.port1
-
-
-|main|stopwatch:comb_3
+|stopwatch
 clk => seconds[0]~reg0.CLK
 clk => seconds[1]~reg0.CLK
 clk => seconds[2]~reg0.CLK
@@ -127,93 +63,37 @@ clk => sec_cnt[28].CLK
 clk => sec_cnt[29].CLK
 clk => sec_cnt[30].CLK
 clk => sec_cnt[31].CLK
-seconds[0] <= seconds[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-seconds[1] <= seconds[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-seconds[2] <= seconds[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-seconds[3] <= seconds[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-seconds[4] <= seconds[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-seconds[5] <= seconds[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-seconds[6] <= seconds[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-seconds[7] <= seconds[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-seconds[8] <= seconds[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-seconds[9] <= seconds[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-seconds[10] <= seconds[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-seconds[11] <= seconds[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-seconds[12] <= seconds[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-seconds[13] <= seconds[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-seconds[14] <= seconds[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-seconds[15] <= seconds[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-seconds[16] <= seconds[16]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-seconds[17] <= seconds[17]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-seconds[18] <= seconds[18]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-seconds[19] <= seconds[19]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-seconds[20] <= seconds[20]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-seconds[21] <= seconds[21]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-seconds[22] <= seconds[22]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-seconds[23] <= seconds[23]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-seconds[24] <= seconds[24]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-seconds[25] <= seconds[25]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-seconds[26] <= seconds[26]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-seconds[27] <= seconds[27]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-seconds[28] <= seconds[28]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-seconds[29] <= seconds[29]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-seconds[30] <= seconds[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-seconds[31] <= seconds[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|main|display:comb_10
-number[0] => Decoder0.IN3
-number[1] => Decoder0.IN2
-number[2] => Decoder0.IN1
-number[3] => Decoder0.IN0
-hex[6] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-hex[5] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-hex[4] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-hex[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-hex[2] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-hex[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-hex[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|main|display:comb_11
-number[0] => Decoder0.IN3
-number[1] => Decoder0.IN2
-number[2] => Decoder0.IN1
-number[3] => Decoder0.IN0
-hex[6] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-hex[5] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-hex[4] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-hex[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-hex[2] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-hex[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-hex[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|main|display:comb_12
-number[0] => Decoder0.IN3
-number[1] => Decoder0.IN2
-number[2] => Decoder0.IN1
-number[3] => Decoder0.IN0
-hex[6] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-hex[5] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-hex[4] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-hex[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-hex[2] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-hex[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-hex[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|main|display:comb_13
-number[0] => Decoder0.IN3
-number[1] => Decoder0.IN2
-number[2] => Decoder0.IN1
-number[3] => Decoder0.IN0
-hex[6] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-hex[5] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-hex[4] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-hex[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-hex[2] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-hex[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-hex[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+seconds[0] << seconds[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seconds[1] << seconds[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seconds[2] << seconds[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seconds[3] << seconds[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seconds[4] << seconds[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seconds[5] << seconds[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seconds[6] << seconds[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seconds[7] << seconds[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seconds[8] << seconds[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seconds[9] << seconds[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seconds[10] << seconds[10]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seconds[11] << seconds[11]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seconds[12] << seconds[12]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seconds[13] << seconds[13]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seconds[14] << seconds[14]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seconds[15] << seconds[15]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seconds[16] << seconds[16]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seconds[17] << seconds[17]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seconds[18] << seconds[18]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seconds[19] << seconds[19]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seconds[20] << seconds[20]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seconds[21] << seconds[21]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seconds[22] << seconds[22]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seconds[23] << seconds[23]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seconds[24] << seconds[24]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seconds[25] << seconds[25]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seconds[26] << seconds[26]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seconds[27] << seconds[27]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seconds[28] << seconds[28]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seconds[29] << seconds[29]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seconds[30] << seconds[30]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+seconds[31] << seconds[31]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 

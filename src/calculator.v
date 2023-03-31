@@ -9,7 +9,6 @@ module calculator(
 	initial begin 
 		answer = 0; 
 		signal = 0;
-		enable = 1;
 	end 
 	
 	parameter A = 4'd10, B = 4'd11, C = 4'd12, D = 4'd13;

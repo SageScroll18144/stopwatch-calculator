@@ -4,10 +4,15 @@ module main(
 	output [0:6] display_centenas,
 	output [0:6] display_dezenas,
 	output [0:6] display_unidades,	
-	output [0:6] display_m_seconds
+	output [0:6] display_m_seconds, 
+
+	input[3:0] LINE,
+	output reg[3:0] COLLUMMN,
+	output reg[3:0] keyword
 );
 	
 	stopwatch(clk, seconds);
+	keypad(clk, LINE, COLLUMMN, keyword);
 	
 	reg[3:0] centena;
 	reg[3:0] dezena;
