@@ -1,46 +1,158 @@
-|keypad
-clk => keyword[0]~reg0.CLK
-clk => keyword[1]~reg0.CLK
-clk => keyword[2]~reg0.CLK
-clk => keyword[3]~reg0.CLK
-clk => cnt_clk[0].CLK
-clk => cnt_clk[1].CLK
-clk => cnt_clk[2].CLK
-clk => cnt_clk[3].CLK
-clk => cnt_clk[4].CLK
-clk => cnt_clk[5].CLK
-clk => cnt_clk[6].CLK
-clk => cnt_clk[7].CLK
-clk => cnt_clk[8].CLK
-clk => cnt_clk[9].CLK
-clk => cnt_clk[10].CLK
-clk => cnt_clk[11].CLK
-clk => cnt_clk[12].CLK
-clk => cnt_clk[13].CLK
-clk => cnt_clk[14].CLK
-clk => cnt_clk[15].CLK
-clk => cnt_clk[16].CLK
-clk => cnt_clk[17].CLK
-clk => cnt_clk[18].CLK
-clk => cnt_clk[19].CLK
-clk => cnt_clk[20].CLK
-clk => cnt_clk[21].CLK
-clk => cnt_clk[22].CLK
-clk => cnt_clk[23].CLK
-clk => cnt_clk[24].CLK
-clk => cnt_clk[25].CLK
-LINE[0] => ~NO_FANOUT~
-LINE[1] => ~NO_FANOUT~
-LINE[2] => ~NO_FANOUT~
-LINE[3] => ~NO_FANOUT~
-COLLUMMN[0] << <GND>
-COLLUMMN[1] << <GND>
-COLLUMMN[2] << <GND>
-COLLUMMN[3] << <GND>
-keyword[0] << keyword[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-keyword[1] << keyword[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-keyword[2] << keyword[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-keyword[3] << keyword[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-led << <VCC>
+|main
+clk => clk.IN1
+seconds[0] << <GND>
+seconds[1] << <GND>
+seconds[2] << <GND>
+seconds[3] << <GND>
+seconds[4] << <GND>
+seconds[5] << <GND>
+seconds[6] << <GND>
+seconds[7] << <GND>
+seconds[8] << <GND>
+seconds[9] << <GND>
+seconds[10] << <GND>
+seconds[11] << <GND>
+seconds[12] << <GND>
+seconds[13] << <GND>
+seconds[14] << <GND>
+seconds[15] << <GND>
+seconds[16] << <GND>
+seconds[17] << <GND>
+seconds[18] << <GND>
+seconds[19] << <GND>
+seconds[20] << <GND>
+seconds[21] << <GND>
+seconds[22] << <GND>
+seconds[23] << <GND>
+seconds[24] << <GND>
+seconds[25] << <GND>
+seconds[26] << <GND>
+seconds[27] << <GND>
+seconds[28] << <GND>
+seconds[29] << <GND>
+seconds[30] << <GND>
+seconds[31] << <GND>
+display_centenas[6] << display:comb_10.port1
+display_centenas[5] << display:comb_10.port1
+display_centenas[4] << display:comb_10.port1
+display_centenas[3] << display:comb_10.port1
+display_centenas[2] << display:comb_10.port1
+display_centenas[1] << display:comb_10.port1
+display_centenas[0] << display:comb_10.port1
+display_dezenas[6] << display:comb_11.port1
+display_dezenas[5] << display:comb_11.port1
+display_dezenas[4] << display:comb_11.port1
+display_dezenas[3] << display:comb_11.port1
+display_dezenas[2] << display:comb_11.port1
+display_dezenas[1] << display:comb_11.port1
+display_dezenas[0] << display:comb_11.port1
+display_unidades[6] << display:comb_12.port1
+display_unidades[5] << display:comb_12.port1
+display_unidades[4] << display:comb_12.port1
+display_unidades[3] << display:comb_12.port1
+display_unidades[2] << display:comb_12.port1
+display_unidades[1] << display:comb_12.port1
+display_unidades[0] << display:comb_12.port1
+display_m_seconds[6] << display:comb_13.port1
+display_m_seconds[5] << display:comb_13.port1
+display_m_seconds[4] << display:comb_13.port1
+display_m_seconds[3] << display:comb_13.port1
+display_m_seconds[2] << display:comb_13.port1
+display_m_seconds[1] << display:comb_13.port1
+display_m_seconds[0] << display:comb_13.port1
+LINE[0] => LINE[0].IN1
+LINE[1] => LINE[1].IN1
+LINE[2] => LINE[2].IN1
+LINE[3] => LINE[3].IN1
+COLLUMMN[0] << keypad:comb_3.port2
+COLLUMMN[1] << keypad:comb_3.port2
+COLLUMMN[2] << keypad:comb_3.port2
+COLLUMMN[3] << keypad:comb_3.port2
+keyword[0] << keypad:comb_3.port3
+keyword[1] << keypad:comb_3.port3
+keyword[2] << keypad:comb_3.port3
+keyword[3] << keypad:comb_3.port3
+led << keypad:comb_3.port4
+
+
+|main|keypad:comb_3
+clk => ~NO_FANOUT~
+LINE[0] => l[2].OUTPUTSELECT
+LINE[0] => l[1].OUTPUTSELECT
+LINE[0] => l[0].OUTPUTSELECT
+LINE[1] => l.OUTPUTSELECT
+LINE[1] => l.OUTPUTSELECT
+LINE[1] => l.OUTPUTSELECT
+LINE[2] => l.OUTPUTSELECT
+LINE[2] => l.OUTPUTSELECT
+LINE[2] => l.OUTPUTSELECT
+LINE[3] => l.DATAA
+LINE[3] => l.DATAA
+LINE[3] => l.DATAA
+COLUMN[0] <= <GND>
+COLUMN[1] <= <GND>
+COLUMN[2] <= <GND>
+COLUMN[3] <= <GND>
+keyword[0] <= keypad_.DATAOUT
+keyword[1] <= keypad_.DATAOUT1
+keyword[2] <= keypad_.DATAOUT2
+keyword[3] <= keypad_.DATAOUT3
+led <= <GND>
+
+
+|main|display:comb_10
+number[0] => Decoder0.IN3
+number[1] => Decoder0.IN2
+number[2] => Decoder0.IN1
+number[3] => Decoder0.IN0
+hex[6] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+hex[5] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+hex[4] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+hex[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+hex[2] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+hex[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+hex[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|display:comb_11
+number[0] => Decoder0.IN3
+number[1] => Decoder0.IN2
+number[2] => Decoder0.IN1
+number[3] => Decoder0.IN0
+hex[6] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+hex[5] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+hex[4] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+hex[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+hex[2] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+hex[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+hex[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|display:comb_12
+number[0] => Decoder0.IN3
+number[1] => Decoder0.IN2
+number[2] => Decoder0.IN1
+number[3] => Decoder0.IN0
+hex[6] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+hex[5] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+hex[4] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+hex[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+hex[2] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+hex[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+hex[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main|display:comb_13
+number[0] => Decoder0.IN3
+number[1] => Decoder0.IN2
+number[2] => Decoder0.IN1
+number[3] => Decoder0.IN0
+hex[6] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+hex[5] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+hex[4] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+hex[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+hex[2] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+hex[1] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+hex[0] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
