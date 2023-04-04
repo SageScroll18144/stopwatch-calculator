@@ -1,5 +1,5 @@
 Analysis & Synthesis report for main
-Fri Mar 31 12:06:09 2023
+Tue Apr  4 10:29:26 2023
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -13,9 +13,9 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Multiplexer Restructuring Statistics (Restructuring Performed)
- 10. Parameter Settings for User Entity Instance: Top-level Entity: |stopwatch
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Parameter Settings for User Entity Instance: Top-level Entity: |keypad
  11. Post-Synthesis Netlist Statistics for Top Partition
  12. Elapsed Time Per Partition
  13. Analysis & Synthesis Messages
@@ -45,16 +45,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Mar 31 12:06:09 2023       ;
+; Analysis & Synthesis Status        ; Successful - Tue Apr  4 10:29:26 2023       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; main                                        ;
-; Top-level Entity Name              ; stopwatch                                   ;
+; Top-level Entity Name              ; keypad                                      ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 116                                         ;
-;     Total combinational functions  ; 116                                         ;
-;     Dedicated logic registers      ; 64                                          ;
-; Total registers                    ; 64                                          ;
-; Total pins                         ; 33                                          ;
+; Total logic elements               ; 0                                           ;
+;     Total combinational functions  ; 0                                           ;
+;     Dedicated logic registers      ; 0                                           ;
+; Total registers                    ; 0                                           ;
+; Total pins                         ; 14                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                           ; Setting            ; Default Value      ;
 +------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                           ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                            ; stopwatch          ; main               ;
+; Top-level entity name                                            ; keypad             ; main               ;
 ; Family name                                                      ; Cyclone IV E       ; Cyclone V          ;
 ; Use smart compilation                                            ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation ; On                 ; On                 ;
@@ -157,53 +157,51 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 12          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 12          ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-12        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                       ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                         ; Library ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------------------------+---------+
-; stopwatch.v                      ; yes             ; User Verilog HDL File  ; /home/lypess/Documentos/estudos/stopwatch-calculator/src/stopwatch.v ;         ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                    ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                      ; Library ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------+---------+
+; keypad.v                         ; yes             ; User Verilog HDL File  ; /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v ;         ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 116       ;
-;                                             ;           ;
-; Total combinational functions               ; 116       ;
-; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 21        ;
-;     -- 3 input functions                    ; 19        ;
-;     -- <=2 input functions                  ; 76        ;
-;                                             ;           ;
-; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 54        ;
-;     -- arithmetic mode                      ; 62        ;
-;                                             ;           ;
-; Total registers                             ; 64        ;
-;     -- Dedicated logic registers            ; 64        ;
-;     -- I/O registers                        ; 0         ;
-;                                             ;           ;
-; I/O pins                                    ; 33        ;
-;                                             ;           ;
-; Embedded Multiplier 9-bit elements          ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 64        ;
-; Total fan-out                               ; 527       ;
-; Average fan-out                             ; 2.14      ;
-+---------------------------------------------+-----------+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+;                                             ;       ;
+; Total combinational functions               ; 0     ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- <=2 input functions                  ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+;     -- Dedicated logic registers            ; 0     ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 14    ;
+;                                             ;       ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+;                                             ;       ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 1     ;
+; Total fan-out                               ; 14    ;
+; Average fan-out                             ; 0.50  ;
++---------------------------------------------+-------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -211,9 +209,22 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |stopwatch                 ; 116 (116)           ; 64 (64)                   ; 0           ; 0            ; 0       ; 0         ; 33   ; 0            ; |stopwatch          ; stopwatch   ; work         ;
+; |keypad                    ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 14   ; 0            ; |keypad             ; keypad      ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; keyword[0]~reg0                       ; Merged with keyword[3]~reg0            ;
+; keyword[1]~reg0                       ; Merged with keyword[3]~reg0            ;
+; keyword[2]~reg0                       ; Merged with keyword[3]~reg0            ;
+; keyword[3]~reg0                       ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 4 ;                                        ;
++---------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -221,32 +232,40 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 64    ;
-; Number of registers using Synchronous Clear  ; 32    ;
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 11    ;
+; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |stopwatch|seconds[16]~reg0 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
-
-
-+---------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |stopwatch ;
-+----------------+----------+-----------------------------------------------+
-; Parameter Name ; Value    ; Type                                          ;
-+----------------+----------+-----------------------------------------------+
-; clk_machine    ; 50000000 ; Signed Integer                                ;
-+----------------+----------+-----------------------------------------------+
++------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |keypad ;
++----------------+----------+--------------------------------------------+
+; Parameter Name ; Value    ; Type                                       ;
++----------------+----------+--------------------------------------------+
+; clk_machine    ; 50000000 ; Signed Integer                             ;
+; delay_debounce ; 500000   ; Signed Integer                             ;
+; zero           ; 0000     ; Unsigned Binary                            ;
+; one            ; 0001     ; Unsigned Binary                            ;
+; two            ; 0010     ; Unsigned Binary                            ;
+; three          ; 0011     ; Unsigned Binary                            ;
+; four           ; 0100     ; Unsigned Binary                            ;
+; five           ; 0101     ; Unsigned Binary                            ;
+; six            ; 0110     ; Unsigned Binary                            ;
+; seven          ; 0111     ; Unsigned Binary                            ;
+; eight          ; 1000     ; Unsigned Binary                            ;
+; nine           ; 1001     ; Unsigned Binary                            ;
+; A              ; 1010     ; Unsigned Binary                            ;
+; B              ; 1011     ; Unsigned Binary                            ;
+; C              ; 1100     ; Unsigned Binary                            ;
+; D              ; 1101     ; Unsigned Binary                            ;
+; hashtag        ; 1110     ; Unsigned Binary                            ;
+; star           ; 1111     ; Unsigned Binary                            ;
++----------------+----------+--------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -255,22 +274,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 33                          ;
-; cycloneiii_ff         ; 64                          ;
-;     ENA               ; 11                          ;
-;     SCLR              ; 32                          ;
-;     plain             ; 21                          ;
-; cycloneiii_lcell_comb ; 116                         ;
-;     arith             ; 62                          ;
-;         2 data inputs ; 62                          ;
-;     normal            ; 54                          ;
-;         1 data inputs ; 2                           ;
-;         2 data inputs ; 12                          ;
-;         3 data inputs ; 19                          ;
-;         4 data inputs ; 21                          ;
+; boundary_port         ; 14                          ;
+; cycloneiii_lcell_comb ; 2                           ;
+;     normal            ; 2                           ;
+;         0 data inputs ; 2                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.10                        ;
-; Average LUT depth     ; 4.06                        ;
+; Max LUT depth         ; 0.00                        ;
+; Average LUT depth     ; 0.00                        ;
 +-----------------------+-----------------------------+
 
 
@@ -289,7 +299,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Fri Mar 31 12:06:02 2023
+    Info: Processing started: Tue Apr  4 10:29:18 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off main -c main
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -303,27 +313,60 @@ Info (12021): Found 1 design units, including 1 entities, in source file keypad.
     Info (12023): Found entity 1: keypad File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file test_script.v
     Info (12023): Found entity 1: test_script File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/test_script.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file stopwatch.v
-    Info (12023): Found entity 1: stopwatch File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/stopwatch.v Line: 1
-Critical Warning (10846): Verilog HDL Instantiation warning at main.v(14): instance has no name File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 14
-Critical Warning (10846): Verilog HDL Instantiation warning at main.v(15): instance has no name File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 15
-Critical Warning (10846): Verilog HDL Instantiation warning at main.v(29): instance has no name File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 29
-Critical Warning (10846): Verilog HDL Instantiation warning at main.v(30): instance has no name File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 30
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(17): instance has no name File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 17
 Critical Warning (10846): Verilog HDL Instantiation warning at main.v(31): instance has no name File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 31
 Critical Warning (10846): Verilog HDL Instantiation warning at main.v(32): instance has no name File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 32
-Info (12127): Elaborating entity "stopwatch" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at stopwatch.v(9): object "m_sec_cnt" assigned a value but never read File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/stopwatch.v Line: 9
-Info (286030): Timing-Driven Synthesis is running
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(33): instance has no name File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 33
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(34): instance has no name File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 34
+Info (12127): Elaborating entity "keypad" for the top level hierarchy
+Warning (10240): Verilog HDL Always Construct warning at keypad.v(17): inferring latch(es) for variable "led", which holds its previous value in one or more paths through the always construct File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 17
+Warning (10240): Verilog HDL Always Construct warning at keypad.v(17): inferring latch(es) for variable "partial_keyword", which holds its previous value in one or more paths through the always construct File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 17
+Warning (10230): Verilog HDL assignment warning at keypad.v(50): truncated value with size 32 to match size of target (26) File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 50
+Warning (10230): Verilog HDL assignment warning at keypad.v(77): truncated value with size 32 to match size of target (4) File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 77
+Warning (10030): Net "COLLUMMN" at keypad.v(4) has no driver or initial value, using a default initial value '0' File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 4
+Info (10041): Inferred latch for "partial_keyword.010001" at keypad.v(17) File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 17
+Info (10041): Inferred latch for "partial_keyword.star" at keypad.v(17) File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 17
+Info (10041): Inferred latch for "partial_keyword.hashtag" at keypad.v(17) File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 17
+Info (10041): Inferred latch for "partial_keyword.D" at keypad.v(17) File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 17
+Info (10041): Inferred latch for "partial_keyword.C" at keypad.v(17) File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 17
+Info (10041): Inferred latch for "partial_keyword.B" at keypad.v(17) File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 17
+Info (10041): Inferred latch for "partial_keyword.A" at keypad.v(17) File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 17
+Info (10041): Inferred latch for "partial_keyword.nine" at keypad.v(17) File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 17
+Info (10041): Inferred latch for "partial_keyword.eight" at keypad.v(17) File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 17
+Info (10041): Inferred latch for "partial_keyword.seven" at keypad.v(17) File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 17
+Info (10041): Inferred latch for "partial_keyword.six" at keypad.v(17) File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 17
+Info (10041): Inferred latch for "partial_keyword.five" at keypad.v(17) File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 17
+Info (10041): Inferred latch for "partial_keyword.four" at keypad.v(17) File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 17
+Info (10041): Inferred latch for "partial_keyword.three" at keypad.v(17) File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 17
+Info (10041): Inferred latch for "partial_keyword.two" at keypad.v(17) File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 17
+Info (10041): Inferred latch for "partial_keyword.one" at keypad.v(17) File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 17
+Info (10041): Inferred latch for "partial_keyword.zero" at keypad.v(17) File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 17
+Info (10041): Inferred latch for "led" at keypad.v(17) File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 17
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "COLLUMMN[0]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 4
+    Warning (13410): Pin "COLLUMMN[1]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 4
+    Warning (13410): Pin "COLLUMMN[2]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 4
+    Warning (13410): Pin "COLLUMMN[3]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 4
+    Warning (13410): Pin "keyword[0]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 48
+    Warning (13410): Pin "keyword[1]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 48
+    Warning (13410): Pin "keyword[2]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 48
+    Warning (13410): Pin "keyword[3]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 48
+    Warning (13410): Pin "led" is stuck at VCC File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 6
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 149 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 1 input pins
-    Info (21059): Implemented 32 output pins
-    Info (21061): Implemented 116 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 481 megabytes
-    Info: Processing ended: Fri Mar 31 12:06:09 2023
-    Info: Elapsed time: 00:00:07
+Warning (21074): Design contains 5 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clk" File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 2
+    Warning (15610): No output dependent on input pin "LINE[0]" File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 3
+    Warning (15610): No output dependent on input pin "LINE[1]" File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 3
+    Warning (15610): No output dependent on input pin "LINE[2]" File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 3
+    Warning (15610): No output dependent on input pin "LINE[3]" File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 3
+Info (21057): Implemented 14 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 9 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 27 warnings
+    Info: Peak virtual memory: 372 megabytes
+    Info: Processing ended: Tue Apr  4 10:29:26 2023
+    Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:18
 
 

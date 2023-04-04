@@ -7,12 +7,14 @@ module main(
 	output [0:6] display_m_seconds, 
 
 	input[3:0] LINE,
-	output reg[3:0] COLLUMMN,
-	output reg[3:0] keyword
+	output [3:0] COLLUMMN,
+	output [3:0] keyword, 
+	
+	output led
 );
 	
-	stopwatch(clk, seconds);
-	keypad(clk, LINE, COLLUMMN, keyword);
+	//stopwatch(clk, seconds);
+	keypad(clk, LINE, COLLUMMN, keyword, led);
 	
 	reg[3:0] centena;
 	reg[3:0] dezena;
@@ -20,10 +22,10 @@ module main(
 	reg[3:0] dec_seconds;
 	
 	always @ (*) begin
-		centena <= seconds / 1000;
-		dezena <= (seconds % 1000) / 100;
-		unidade <= (seconds % 100) / 10;
-		dec_seconds <= seconds % 10;
+		centena <= keyword / 1000;
+		dezena <= (keyword % 1000) / 100;
+		unidade <= (keyword % 100) / 10;
+		dec_seconds <= keyword % 10;
 	end
 	
 	display(centena, display_centenas);

@@ -1,0 +1,20 @@
+
+State Machine - |main|keypad:comb_4|partial_keyword
+Name partial_keyword.star partial_keyword.hashtag partial_keyword.D partial_keyword.C partial_keyword.B partial_keyword.A partial_keyword.nine partial_keyword.eight partial_keyword.seven partial_keyword.six partial_keyword.five partial_keyword.four partial_keyword.three partial_keyword.two partial_keyword.one partial_keyword.zero partial_keyword.010001 
+partial_keyword.zero 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+partial_keyword.one 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 
+partial_keyword.two 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 
+partial_keyword.three 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 
+partial_keyword.four 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 
+partial_keyword.five 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 
+partial_keyword.six 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 
+partial_keyword.seven 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 
+partial_keyword.eight 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 
+partial_keyword.nine 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 
+partial_keyword.A 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 
+partial_keyword.B 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 
+partial_keyword.C 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 
+partial_keyword.D 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 
+partial_keyword.hashtag 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 
+partial_keyword.star 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 
+partial_keyword.010001 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
