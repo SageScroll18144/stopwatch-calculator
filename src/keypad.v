@@ -12,60 +12,62 @@ module keypad (
 	reg[31:0] p_kw;
 	reg[31:0] bf_kw = 0;
 	reg[31:0] cnt_db = 0;
-	reg[3:0] cnt = 0;
+	reg[31:0] cnt = 0;
 	
 	always @ (*) begin
-		if(cnt == 0) begin
+		if(cnt == 10000) begin
 			row[0] = 0;
 			row[1] = 1;
 			row[2] = 1;
 			row[3] = 1;
 		end
-		else if(cnt == 1) begin
+		else if(cnt == 20000) begin
 			row[0] = 1;
 			row[1] = 0;
 			row[2] = 1;
 			row[3] = 1;
 		end
-		else if(cnt == 2) begin
+		else if(cnt == 30000) begin
 			row[0] = 1;
 			row[1] = 1;
 			row[2] = 0;
 			row[3] = 1;
 		end
-		else if(cnt == 3) begin
+		else if(cnt == 40000) begin
 			row[0] = 1;
 			row[1] = 1;
 			row[2] = 1;
 			row[3] = 0;
 		end
 		
-		if(cnt >= 3) cnt = 0;
+		if(cnt >= 40000) cnt = 0;
 		else cnt = cnt + 1;
 	end
 	
 	always @ (*) begin
-		if(~row[0] && ~col[0]) p_kw <= one;
-		else if(~row[0] && ~col[1]) p_kw <= two;
-		else if(~row[0] && ~col[2]) p_kw <= three;
-		else if(~row[0] && ~col[3]) p_kw <= A;
-		
-		else if(~row[1] && ~col[0]) p_kw <= four;
-		else if(~row[1] && ~col[1]) p_kw <= five;
-		else if(~row[1] && ~col[2]) p_kw <= six;
-		else if(~row[1] && ~col[3]) p_kw <= B;
-		
-		else if(~row[2] && ~col[0]) p_kw <= seven;
-		else if(~row[2] && ~col[1]) p_kw <= eight;
-		else if(~row[2] && ~col[2]) p_kw <= nine;
-		else if(~row[2] && ~col[3]) p_kw <= C;
-		
-		else if(~row[3] && ~col[0]) p_kw <= star;
-		else if(~row[3] && ~col[1]) p_kw <= zero;
-		else if(~row[3] && ~col[2]) p_kw <= hashtag;
-		else if(~row[3] && ~col[3]) p_kw <= D;
-		
-		else p_kw <= 0;
+		if(~&col) begin
+			if(~row[0] && ~col[0]) p_kw <= one;
+			else if(~row[0] && ~col[1]) p_kw <= two;
+			else if(~row[0] && ~col[2]) p_kw <= three;
+			else if(~row[0] && ~col[3]) p_kw <= A;
+			
+			else if(~row[1] && ~col[0]) p_kw <= four;
+			else if(~row[1] && ~col[1]) p_kw <= five;
+			else if(~row[1] && ~col[2]) p_kw <= six;
+			else if(~row[1] && ~col[3]) p_kw <= B;
+			
+			else if(~row[2] && ~col[0]) p_kw <= seven;
+			else if(~row[2] && ~col[1]) p_kw <= eight;
+			else if(~row[2] && ~col[2]) p_kw <= nine;
+			else if(~row[2] && ~col[3]) p_kw <= C;
+			
+			else if(~row[3] && ~col[0]) p_kw <= star;
+			else if(~row[3] && ~col[1]) p_kw <= zero;
+			else if(~row[3] && ~col[2]) p_kw <= hashtag;
+			else if(~row[3] && ~col[3]) p_kw <= D;
+			
+			else p_kw <= 0;
+		end
 	end
 	
 	always @ (posedge clk) begin
