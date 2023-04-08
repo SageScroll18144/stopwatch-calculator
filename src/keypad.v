@@ -10,13 +10,12 @@ parameter debounce_time = clock_freq/100;
 reg [31:0] counter;
 reg [3:0] state;
 reg [3:0] row2;
-reg [15:0] vector = 16'hFFFF; // hexadecimal pra tudo 1
+reg [15:0] vector;
 reg sum;
 reg espera;
 parameter inicial = 4'd0, debounce = 4'd1, confirm = 4'd2, decode = 4'd3;
 
 initial begin
-	KeypadPress = 0;
 	row2 = 4'b0111;
 	espera = 0;
 end
