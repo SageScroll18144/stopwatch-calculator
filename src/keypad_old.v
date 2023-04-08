@@ -1,4 +1,4 @@
-module keypad (
+module keypad_old (
 	input clk,
 	output reg [3:0] row,
 	input [3:0] col,
