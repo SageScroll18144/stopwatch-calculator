@@ -6,8 +6,8 @@ module main(
 	output [0:6] display_unidades,	
 	output [0:6] display_m_seconds, 
 
-	input[3:0] LINE,
-	output [3:0] COLLUMMN,
+	output[3:0] LINE,
+	input [3:0] COLLUMMN,
 	output [3:0] keyword
 );
 	
