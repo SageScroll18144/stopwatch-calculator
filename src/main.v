@@ -8,13 +8,11 @@ module main(
 
 	input[3:0] LINE,
 	output [3:0] COLLUMMN,
-	output [3:0] keyword, 
-	
-	output led
+	output [3:0] keyword
 );
 	
 	//stopwatch(clk, seconds);
-	keypad(clk, LINE, COLLUMMN, keyword, led);
+	keypad(clk, LINE, COLLUMMN, keyword);
 	
 	reg[3:0] centena;
 	reg[3:0] dezena;
