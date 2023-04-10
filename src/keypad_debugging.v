@@ -1,4 +1,4 @@
-module keypad2(
+module keypad(
 	 input clk,
     output [3:0] row,
     input [3:0] col,
@@ -10,13 +10,13 @@ parameter debounce_time = clock_freq/100;
 reg [31:0] counter;
 reg [3:0] state;
 reg [3:0] row2;
-reg [15:0] vector = 16'hFFFF;
-reg [31:0] sum;
+reg [31:0] result;
+reg sum;
 reg espera;
 parameter inicial = 4'd0, debounce = 4'd1, confirm = 4'd2, decode = 4'd3;
 
 initial begin
-	KeypadPress = 0;
+	state = inicial;
 	row2 = 4'b0111;
 	espera = 0;
 	counter = 0;
@@ -30,97 +30,137 @@ assign row[3] = row2[3];
 always @(posedge clk) begin
 	case(state)
 		inicial: begin
-			if(sum) begin
-				state <= debounce;
-			end
+			if(sum) state <= debounce;
 		end
 		debounce: begin
-			if(counter != debounce_time) begin
-				counter <= counter + 1;
-			end
+			if(counter != debounce_time) counter <= counter + 1;
 			else begin
-				state <= confirm;
+				if(sum) state <= answer;
+				else state <= inicial;
 				counter <= 0;
 			end
 		end
-		confirm: begin
-			if(sum) begin
-				state <= decode;
-			end
-			else begin
-				state <= inicial;
-			end
-		end
-		decode: begin
+		answer: begin
+			KeypadPress <= result;
 			state <= inicial;
 		end
 	endcase
 end
 
 always @(*) begin
-	if(state == decode) begin
-		/*if(~vector[1]) KeypadPress = zero;
-		else if(~vector[13]) KeypadPress = two;
-		else if(~vector[14]) KeypadPress = three;
-		else if(~vector[15]) KeypadPress = A;
-		else if(~vector[8]) KeypadPress = four;
-		else if(~vector[9]) KeypadPress = five;
-		else if(~vector[10]) KeypadPress = six;
-		else if(~vector[11]) KeypadPress = B;
-		else if(~vector[4]) KeypadPress = seven;
-		else if(~vector[5]) KeypadPress = eight;
-		else if(~vector[6]) KeypadPress = nine;
-		else if(~vector[7]) KeypadPress = C;
-		else if(~vector[0]) KeypadPress = star;
-		else if(~vector[12]) KeypadPress = one;
-		else if(~vector[2]) KeypadPress = hashtag;
-		else if(~vector[3]) KeypadPress = D;*/
-		KeypadPress = sum;
+	if(state == answer) begin
+		case(row)
+		4'b0111: begin
+			case(col)
+			4'b0111: begin
+				result = star;
+			end
+			4'b1011: begin
+				result = zero;
+			end
+			4'b1101: begin
+				result = hashtag;
+			end
+			4'b1110: begin
+				result = D;
+			end
+			endcase
+		4'b1011: begin
+			case(col)
+			4'b0111: begin
+				result = seven;
+			end
+			4'b1011: begin
+				result = eight;
+			end
+			4'b1101: begin
+				result = nine;
+			end
+			4'b1110: begin
+				result = C;
+			end
+			endcase
+		end
+		4'b1101: begin
+			case(col)
+			4'b0111: begin
+				result = four;
+			end
+			4'b1011: begin
+				result = five;
+			end
+			4'b1101: begin
+				result = six;
+			end
+			4'b1110: begin
+				result = B;
+			end
+			endcase
+		end
+		4'b1110: begin
+			case(col)
+			4'b0111: begin
+				result = one;
+			end
+			4'b1011: begin
+				result = two;
+			end
+			4'b1101: begin
+				result = three;
+			end
+			4'b1110: begin
+				result = A;
+			end
+			endcase
+		end
+		endcase
 	end
 end
 
 always @ (posedge clk) begin
+	if(state == inicial) begin
 		case(row2)
 			4'b0111: begin
 				if(espera == 0) begin
 					espera <= 1;
-					end else begin
-						espera <= 0;
-						vector[3:0] <= col;
-						row2 <= 4'b1011;
+					end 
+					else begin
+							espera <= 0;
+							sum <= ~&col;
+							row2 <= 4'b1011;
 					end
 				end
 			4'b1011: begin
 					if(espera == 0) begin
 						espera <= 1;
-						end else begin
+						end 
+						else begin
 							espera <= 0;
-							vector[7:4] <= col;
+							sum <= ~&col;
 							row2 <= 4'b1101;
 						end
 					end
 			4'b1101: begin
 					if(espera == 0) begin
 						espera <= 1;
-						end else begin
+						end 
+					else begin
 							espera <= 0;
-							vector[11:8] <= col;
+							sum <= ~&col;
 							row2 <= 4'b1110;
 						end
 					end
 			4'b1110: begin
 					if(espera == 0) begin
 						espera <= 1;
-						end else begin
+						end 
+						else begin
 							espera <= 0;
-							vector[15:12] <= col;
-							sum <= ~vector[0]+~vector[1]+~vector[2]+~vector[3]+~vector[4]+~vector[5]+~vector[6]+
-							~vector[7]+~vector[8]+~vector[9]+~vector[10]+~vector[11]+~vector[12]+~vector[13]+
-							~vector[14]+~vector[15];
+							sum <= ~&col;
 							row2 <= 4'b0111;
 						end
 					end
-		endcase
+		 endcase
+	end
 end
 endmodule
- 
