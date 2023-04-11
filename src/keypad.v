@@ -1,8 +1,8 @@
 module keypad(
 	 input clk,
-    output reg [3:0] row,
-    input [3:0] col,
-    output reg [31:0] KeypadPress
+	    output reg [3:0] row,
+	    input [3:0] col,
+	    output reg [31:0] KeypadPress
 );
 	parameter zero = 4'd0, one = 4'd1, two = 4'd2, three = 4'd3, four = 4'd4, five = 4'd5, six = 4'd6, seven = 4'd7, eight = 4'd8, nine = 4'd9, A = 4'd10, B = 4'd11, C = 4'd12, D = 4'd13, hashtag = 4'd14, star = 4'd15;
 	parameter clock_freq = 50000000;
