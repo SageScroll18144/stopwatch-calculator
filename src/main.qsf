@@ -84,12 +84,6 @@ set_location_assignment PIN_L25 -to display_m_seconds[4]
 set_location_assignment PIN_J22 -to display_m_seconds[5]
 set_location_assignment PIN_H22 -to display_m_seconds[6]
 set_location_assignment PIN_Y2 -to clk
-set_global_assignment -name VERILOG_FILE calculator.v
-set_global_assignment -name VERILOG_FILE main.v
-set_global_assignment -name VERILOG_FILE display.v
-set_global_assignment -name VERILOG_FILE keypad.v
-set_global_assignment -name VERILOG_FILE test_script.v
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
 set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_location_assignment PIN_AC19 -to LINE[0]
@@ -100,8 +94,28 @@ set_location_assignment PIN_AE22 -to COLLUMMN[0]
 set_location_assignment PIN_AF22 -to COLLUMMN[1]
 set_location_assignment PIN_AG25 -to COLLUMMN[2]
 set_location_assignment PIN_AH25 -to COLLUMMN[3]
-set_location_assignment PIN_E21 -to led
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VERILOG_FILE stopwatch.v
+set_global_assignment -name VERILOG_FILE calculator.v
+set_global_assignment -name VERILOG_FILE main.v
+set_global_assignment -name VERILOG_FILE display.v
+set_global_assignment -name VERILOG_FILE keypad.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
+set_global_assignment -name VERILOG_FILE read_cal.v
+set_location_assignment PIN_AA17 -to display_unidades_rc[0]
+set_location_assignment PIN_AB16 -to display_unidades_rc[1]
+set_location_assignment PIN_AA16 -to display_unidades_rc[2]
+set_location_assignment PIN_AB17 -to display_unidades_rc[3]
+set_location_assignment PIN_AB15 -to display_unidades_rc[4]
+set_location_assignment PIN_AA15 -to display_unidades_rc[5]
+set_location_assignment PIN_AC17 -to display_unidades_rc[6]
+set_location_assignment PIN_AD17 -to display_dezenas_rc[0]
+set_location_assignment PIN_AE17 -to display_dezenas_rc[1]
+set_location_assignment PIN_AG17 -to display_dezenas_rc[2]
+set_location_assignment PIN_AH17 -to display_dezenas_rc[3]
+set_location_assignment PIN_AF17 -to display_dezenas_rc[4]
+set_location_assignment PIN_AG18 -to display_dezenas_rc[5]
+set_location_assignment PIN_AA14 -to display_dezenas_rc[6]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

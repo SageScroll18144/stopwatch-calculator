@@ -1,5 +1,5 @@
 Analysis & Synthesis report for main
-Tue Apr  4 14:48:54 2023
+Wed Apr 12 10:59:48 2023
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -13,18 +13,27 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Multiplexer Restructuring Statistics (Restructuring Performed)
- 10. Parameter Settings for User Entity Instance: keypad:comb_3
- 11. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
- 12. Parameter Settings for Inferred Entity Instance: lpm_divide:Div1
- 13. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1
- 14. Parameter Settings for Inferred Entity Instance: lpm_divide:Div2
- 15. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod2
- 16. Post-Synthesis Netlist Statistics for Top Partition
- 17. Elapsed Time Per Partition
- 18. Analysis & Synthesis Messages
- 19. Analysis & Synthesis Suppressed Messages
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for User Entity Instance: stopwatch:comb_3
+ 12. Parameter Settings for User Entity Instance: keypad:comb_4
+ 13. Parameter Settings for Inferred Entity Instance: lpm_divide:Div0
+ 14. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod0
+ 15. Parameter Settings for Inferred Entity Instance: lpm_divide:Div1
+ 16. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod1
+ 17. Parameter Settings for Inferred Entity Instance: lpm_divide:Div2
+ 18. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod2
+ 19. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod3
+ 20. Parameter Settings for Inferred Entity Instance: lpm_divide:Div3
+ 21. Parameter Settings for Inferred Entity Instance: lpm_divide:Mod4
+ 22. Parameter Settings for Inferred Entity Instance: lpm_divide:Div4
+ 23. Port Connectivity Checks: "read_cal:comb_5"
+ 24. Port Connectivity Checks: "keypad:comb_4"
+ 25. Post-Synthesis Netlist Statistics for Top Partition
+ 26. Elapsed Time Per Partition
+ 27. Analysis & Synthesis Messages
+ 28. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -51,16 +60,16 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Apr  4 14:48:54 2023       ;
+; Analysis & Synthesis Status        ; Successful - Wed Apr 12 10:59:48 2023       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; main                                        ;
 ; Top-level Entity Name              ; main                                        ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 27                                          ;
-;     Total combinational functions  ; 27                                          ;
-;     Dedicated logic registers      ; 0                                           ;
-; Total registers                    ; 0                                           ;
-; Total pins                         ; 74                                          ;
+; Total logic elements               ; 4,099                                       ;
+;     Total combinational functions  ; 4,098                                       ;
+;     Dedicated logic registers      ; 227                                         ;
+; Total registers                    ; 227                                         ;
+; Total pins                         ; 124                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -162,11 +171,19 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 12          ;
 ; Maximum allowed            ; 12          ;
 ;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Average used               ; 1.01        ;
+; Maximum used               ; 12          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processor 3            ;   0.1%      ;
+;     Processor 4            ;   0.1%      ;
+;     Processor 5            ;   0.1%      ;
+;     Processor 6            ;   0.1%      ;
+;     Processor 7            ;   0.1%      ;
+;     Processor 8            ;   0.1%      ;
+;     Processors 9-12        ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -175,63 +192,66 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                         ; Library ;
 +----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------+---------+
-; main.v                           ; yes             ; User Verilog HDL File        ; /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v                      ;         ;
-; display.v                        ; yes             ; User Verilog HDL File        ; /home/lypess/Documentos/estudos/stopwatch-calculator/src/display.v                   ;         ;
-; keypad.v                         ; yes             ; User Verilog HDL File        ; /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v                    ;         ;
+; stopwatch.v                      ; yes             ; User Verilog HDL File        ; /home/lypess/Documentos/stopwatch-calculator/src/stopwatch.v                         ;         ;
+; main.v                           ; yes             ; User Verilog HDL File        ; /home/lypess/Documentos/stopwatch-calculator/src/main.v                              ;         ;
+; display.v                        ; yes             ; User Verilog HDL File        ; /home/lypess/Documentos/stopwatch-calculator/src/display.v                           ;         ;
+; keypad.v                         ; yes             ; User Verilog HDL File        ; /home/lypess/Documentos/stopwatch-calculator/src/keypad.v                            ;         ;
+; read_cal.v                       ; yes             ; User Verilog HDL File        ; /home/lypess/Documentos/stopwatch-calculator/src/read_cal.v                          ;         ;
 ; lpm_divide.tdf                   ; yes             ; Megafunction                 ; /home/lypess/intelFPGA_lite/20.1/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
 ; abs_divider.inc                  ; yes             ; Megafunction                 ; /home/lypess/intelFPGA_lite/20.1/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
 ; sign_div_unsign.inc              ; yes             ; Megafunction                 ; /home/lypess/intelFPGA_lite/20.1/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
 ; aglobal201.inc                   ; yes             ; Megafunction                 ; /home/lypess/intelFPGA_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc      ;         ;
-; db/lpm_divide_vam.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/lypess/Documentos/estudos/stopwatch-calculator/src/db/lpm_divide_vam.tdf       ;         ;
-; db/sign_div_unsign_1nh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/lypess/Documentos/estudos/stopwatch-calculator/src/db/sign_div_unsign_1nh.tdf  ;         ;
-; db/alt_u_div_m9f.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/lypess/Documentos/estudos/stopwatch-calculator/src/db/alt_u_div_m9f.tdf        ;         ;
-; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/lypess/Documentos/estudos/stopwatch-calculator/src/db/add_sub_7pc.tdf          ;         ;
-; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/lypess/Documentos/estudos/stopwatch-calculator/src/db/add_sub_8pc.tdf          ;         ;
-; db/lpm_divide_vim.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/lypess/Documentos/estudos/stopwatch-calculator/src/db/lpm_divide_vim.tdf       ;         ;
-; db/sign_div_unsign_nlh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/lypess/Documentos/estudos/stopwatch-calculator/src/db/sign_div_unsign_nlh.tdf  ;         ;
-; db/alt_u_div_27f.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/lypess/Documentos/estudos/stopwatch-calculator/src/db/alt_u_div_27f.tdf        ;         ;
-; db/lpm_divide_l9m.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/lypess/Documentos/estudos/stopwatch-calculator/src/db/lpm_divide_l9m.tdf       ;         ;
-; db/sign_div_unsign_dkh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/lypess/Documentos/estudos/stopwatch-calculator/src/db/sign_div_unsign_dkh.tdf  ;         ;
-; db/alt_u_div_e4f.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/lypess/Documentos/estudos/stopwatch-calculator/src/db/alt_u_div_e4f.tdf        ;         ;
-; db/lpm_divide_ihm.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/lypess/Documentos/estudos/stopwatch-calculator/src/db/lpm_divide_ihm.tdf       ;         ;
-; db/sign_div_unsign_akh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/lypess/Documentos/estudos/stopwatch-calculator/src/db/sign_div_unsign_akh.tdf  ;         ;
-; db/alt_u_div_84f.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/lypess/Documentos/estudos/stopwatch-calculator/src/db/alt_u_div_84f.tdf        ;         ;
-; db/lpm_divide_i9m.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/lypess/Documentos/estudos/stopwatch-calculator/src/db/lpm_divide_i9m.tdf       ;         ;
-; db/sign_div_unsign_7kh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/lypess/Documentos/estudos/stopwatch-calculator/src/db/sign_div_unsign_7kh.tdf  ;         ;
-; db/alt_u_div_24f.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/lypess/Documentos/estudos/stopwatch-calculator/src/db/alt_u_div_24f.tdf        ;         ;
+; db/lpm_divide_dkm.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/lypess/Documentos/stopwatch-calculator/src/db/lpm_divide_dkm.tdf               ;         ;
+; db/sign_div_unsign_5nh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/lypess/Documentos/stopwatch-calculator/src/db/sign_div_unsign_5nh.tdf          ;         ;
+; db/alt_u_div_u9f.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/lypess/Documentos/stopwatch-calculator/src/db/alt_u_div_u9f.tdf                ;         ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/lypess/Documentos/stopwatch-calculator/src/db/add_sub_7pc.tdf                  ;         ;
+; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction  ; /home/lypess/Documentos/stopwatch-calculator/src/db/add_sub_8pc.tdf                  ;         ;
+; db/lpm_divide_gcm.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/lypess/Documentos/stopwatch-calculator/src/db/lpm_divide_gcm.tdf               ;         ;
+; db/lpm_divide_vim.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/lypess/Documentos/stopwatch-calculator/src/db/lpm_divide_vim.tdf               ;         ;
+; db/sign_div_unsign_nlh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/lypess/Documentos/stopwatch-calculator/src/db/sign_div_unsign_nlh.tdf          ;         ;
+; db/alt_u_div_27f.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/lypess/Documentos/stopwatch-calculator/src/db/alt_u_div_27f.tdf                ;         ;
+; db/lpm_divide_6bm.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/lypess/Documentos/stopwatch-calculator/src/db/lpm_divide_6bm.tdf               ;         ;
+; db/sign_div_unsign_rlh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/lypess/Documentos/stopwatch-calculator/src/db/sign_div_unsign_rlh.tdf          ;         ;
+; db/alt_u_div_a7f.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/lypess/Documentos/stopwatch-calculator/src/db/alt_u_div_a7f.tdf                ;         ;
+; db/lpm_divide_ihm.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/lypess/Documentos/stopwatch-calculator/src/db/lpm_divide_ihm.tdf               ;         ;
+; db/sign_div_unsign_akh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/lypess/Documentos/stopwatch-calculator/src/db/sign_div_unsign_akh.tdf          ;         ;
+; db/alt_u_div_84f.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/lypess/Documentos/stopwatch-calculator/src/db/alt_u_div_84f.tdf                ;         ;
+; db/lpm_divide_3bm.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/lypess/Documentos/stopwatch-calculator/src/db/lpm_divide_3bm.tdf               ;         ;
+; db/sign_div_unsign_olh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/lypess/Documentos/stopwatch-calculator/src/db/sign_div_unsign_olh.tdf          ;         ;
+; db/alt_u_div_47f.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/lypess/Documentos/stopwatch-calculator/src/db/alt_u_div_47f.tdf                ;         ;
 +----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                                                                                                  ;
-+---------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-; Resource                                    ; Usage                                                                                                          ;
-+---------------------------------------------+----------------------------------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 27                                                                                                             ;
-;                                             ;                                                                                                                ;
-; Total combinational functions               ; 27                                                                                                             ;
-; Logic element usage by number of LUT inputs ;                                                                                                                ;
-;     -- 4 input functions                    ; 12                                                                                                             ;
-;     -- 3 input functions                    ; 5                                                                                                              ;
-;     -- <=2 input functions                  ; 10                                                                                                             ;
-;                                             ;                                                                                                                ;
-; Logic elements by mode                      ;                                                                                                                ;
-;     -- normal mode                          ; 20                                                                                                             ;
-;     -- arithmetic mode                      ; 7                                                                                                              ;
-;                                             ;                                                                                                                ;
-; Total registers                             ; 0                                                                                                              ;
-;     -- Dedicated logic registers            ; 0                                                                                                              ;
-;     -- I/O registers                        ; 0                                                                                                              ;
-;                                             ;                                                                                                                ;
-; I/O pins                                    ; 74                                                                                                             ;
-;                                             ;                                                                                                                ;
-; Embedded Multiplier 9-bit elements          ; 0                                                                                                              ;
-;                                             ;                                                                                                                ;
-; Maximum fan-out node                        ; lpm_divide:Mod2|lpm_divide_i9m:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_24f:divider|StageOut[12]~2 ;
-; Maximum fan-out                             ; 7                                                                                                              ;
-; Total fan-out                               ; 167                                                                                                            ;
-; Average fan-out                             ; 0.95                                                                                                           ;
-+---------------------------------------------+----------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 4,099     ;
+;                                             ;           ;
+; Total combinational functions               ; 4098      ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 997       ;
+;     -- 3 input functions                    ; 1100      ;
+;     -- <=2 input functions                  ; 2001      ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 2893      ;
+;     -- arithmetic mode                      ; 1205      ;
+;                                             ;           ;
+; Total registers                             ; 227       ;
+;     -- Dedicated logic registers            ; 227       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 124       ;
+;                                             ;           ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 227       ;
+; Total fan-out                               ; 11944     ;
+; Average fan-out                             ; 2.61      ;
++---------------------------------------------+-----------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -239,19 +259,69 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                   ; Entity Name         ; Library Name ;
 +----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |main                                  ; 27 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 74   ; 0            ; |main                                                                                                 ; main                ; work         ;
-;    |display:comb_13|                   ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|display:comb_13                                                                                 ; display             ; work         ;
-;    |keypad:comb_3|                     ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|keypad:comb_3                                                                                   ; keypad              ; work         ;
-;    |lpm_divide:Div2|                   ; 5 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Div2                                                                                 ; lpm_divide          ; work         ;
-;       |lpm_divide_ihm:auto_generated|  ; 5 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Div2|lpm_divide_ihm:auto_generated                                                   ; lpm_divide_ihm      ; work         ;
-;          |sign_div_unsign_akh:divider| ; 5 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Div2|lpm_divide_ihm:auto_generated|sign_div_unsign_akh:divider                       ; sign_div_unsign_akh ; work         ;
-;             |alt_u_div_84f:divider|    ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Div2|lpm_divide_ihm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_84f:divider ; alt_u_div_84f       ; work         ;
-;    |lpm_divide:Mod2|                   ; 9 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Mod2                                                                                 ; lpm_divide          ; work         ;
-;       |lpm_divide_i9m:auto_generated|  ; 9 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Mod2|lpm_divide_i9m:auto_generated                                                   ; lpm_divide_i9m      ; work         ;
-;          |sign_div_unsign_7kh:divider| ; 9 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Mod2|lpm_divide_i9m:auto_generated|sign_div_unsign_7kh:divider                       ; sign_div_unsign_7kh ; work         ;
-;             |alt_u_div_24f:divider|    ; 9 (9)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Mod2|lpm_divide_i9m:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_24f:divider ; alt_u_div_24f       ; work         ;
+; |main                                  ; 4098 (86)           ; 227 (58)                  ; 0           ; 0            ; 0       ; 0         ; 124  ; 0            ; |main                                                                                                 ; main                ; work         ;
+;    |display:comb_225|                  ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|display:comb_225                                                                                ; display             ; work         ;
+;    |display:comb_226|                  ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|display:comb_226                                                                                ; display             ; work         ;
+;    |display:comb_227|                  ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|display:comb_227                                                                                ; display             ; work         ;
+;    |display:comb_228|                  ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|display:comb_228                                                                                ; display             ; work         ;
+;    |display:comb_229|                  ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|display:comb_229                                                                                ; display             ; work         ;
+;    |display:comb_230|                  ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|display:comb_230                                                                                ; display             ; work         ;
+;    |keypad:comb_4|                     ; 108 (108)           ; 72 (72)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|keypad:comb_4                                                                                   ; keypad              ; work         ;
+;    |lpm_divide:Div0|                   ; 672 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_dkm:auto_generated|  ; 672 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Div0|lpm_divide_dkm:auto_generated                                                   ; lpm_divide_dkm      ; work         ;
+;          |sign_div_unsign_5nh:divider| ; 672 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Div0|lpm_divide_dkm:auto_generated|sign_div_unsign_5nh:divider                       ; sign_div_unsign_5nh ; work         ;
+;             |alt_u_div_u9f:divider|    ; 672 (672)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Div0|lpm_divide_dkm:auto_generated|sign_div_unsign_5nh:divider|alt_u_div_u9f:divider ; alt_u_div_u9f       ; work         ;
+;    |lpm_divide:Div1|                   ; 65 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Div1                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_vim:auto_generated|  ; 65 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Div1|lpm_divide_vim:auto_generated                                                   ; lpm_divide_vim      ; work         ;
+;          |sign_div_unsign_nlh:divider| ; 65 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Div1|lpm_divide_vim:auto_generated|sign_div_unsign_nlh:divider                       ; sign_div_unsign_nlh ; work         ;
+;             |alt_u_div_27f:divider|    ; 65 (65)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Div1|lpm_divide_vim:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_27f:divider ; alt_u_div_27f       ; work         ;
+;    |lpm_divide:Div2|                   ; 41 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Div2                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_ihm:auto_generated|  ; 41 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Div2|lpm_divide_ihm:auto_generated                                                   ; lpm_divide_ihm      ; work         ;
+;          |sign_div_unsign_akh:divider| ; 41 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Div2|lpm_divide_ihm:auto_generated|sign_div_unsign_akh:divider                       ; sign_div_unsign_akh ; work         ;
+;             |alt_u_div_84f:divider|    ; 41 (41)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Div2|lpm_divide_ihm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_84f:divider ; alt_u_div_84f       ; work         ;
+;    |lpm_divide:Div3|                   ; 60 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Div3                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_vim:auto_generated|  ; 60 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Div3|lpm_divide_vim:auto_generated                                                   ; lpm_divide_vim      ; work         ;
+;          |sign_div_unsign_nlh:divider| ; 60 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Div3|lpm_divide_vim:auto_generated|sign_div_unsign_nlh:divider                       ; sign_div_unsign_nlh ; work         ;
+;             |alt_u_div_27f:divider|    ; 60 (60)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Div3|lpm_divide_vim:auto_generated|sign_div_unsign_nlh:divider|alt_u_div_27f:divider ; alt_u_div_27f       ; work         ;
+;    |lpm_divide:Div4|                   ; 41 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Div4                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_ihm:auto_generated|  ; 41 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Div4|lpm_divide_ihm:auto_generated                                                   ; lpm_divide_ihm      ; work         ;
+;          |sign_div_unsign_akh:divider| ; 41 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Div4|lpm_divide_ihm:auto_generated|sign_div_unsign_akh:divider                       ; sign_div_unsign_akh ; work         ;
+;             |alt_u_div_84f:divider|    ; 41 (41)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Div4|lpm_divide_ihm:auto_generated|sign_div_unsign_akh:divider|alt_u_div_84f:divider ; alt_u_div_84f       ; work         ;
+;    |lpm_divide:Mod0|                   ; 679 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_gcm:auto_generated|  ; 679 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Mod0|lpm_divide_gcm:auto_generated                                                   ; lpm_divide_gcm      ; work         ;
+;          |sign_div_unsign_5nh:divider| ; 679 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Mod0|lpm_divide_gcm:auto_generated|sign_div_unsign_5nh:divider                       ; sign_div_unsign_5nh ; work         ;
+;             |alt_u_div_u9f:divider|    ; 679 (679)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Mod0|lpm_divide_gcm:auto_generated|sign_div_unsign_5nh:divider|alt_u_div_u9f:divider ; alt_u_div_u9f       ; work         ;
+;    |lpm_divide:Mod1|                   ; 568 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Mod1                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_6bm:auto_generated|  ; 568 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Mod1|lpm_divide_6bm:auto_generated                                                   ; lpm_divide_6bm      ; work         ;
+;          |sign_div_unsign_rlh:divider| ; 568 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Mod1|lpm_divide_6bm:auto_generated|sign_div_unsign_rlh:divider                       ; sign_div_unsign_rlh ; work         ;
+;             |alt_u_div_a7f:divider|    ; 568 (568)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Mod1|lpm_divide_6bm:auto_generated|sign_div_unsign_rlh:divider|alt_u_div_a7f:divider ; alt_u_div_a7f       ; work         ;
+;    |lpm_divide:Mod2|                   ; 371 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Mod2                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_3bm:auto_generated|  ; 371 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Mod2|lpm_divide_3bm:auto_generated                                                   ; lpm_divide_3bm      ; work         ;
+;          |sign_div_unsign_olh:divider| ; 371 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Mod2|lpm_divide_3bm:auto_generated|sign_div_unsign_olh:divider                       ; sign_div_unsign_olh ; work         ;
+;             |alt_u_div_47f:divider|    ; 371 (371)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Mod2|lpm_divide_3bm:auto_generated|sign_div_unsign_olh:divider|alt_u_div_47f:divider ; alt_u_div_47f       ; work         ;
+;    |lpm_divide:Mod3|                   ; 639 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Mod3                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_gcm:auto_generated|  ; 639 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Mod3|lpm_divide_gcm:auto_generated                                                   ; lpm_divide_gcm      ; work         ;
+;          |sign_div_unsign_5nh:divider| ; 639 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Mod3|lpm_divide_gcm:auto_generated|sign_div_unsign_5nh:divider                       ; sign_div_unsign_5nh ; work         ;
+;             |alt_u_div_u9f:divider|    ; 639 (639)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Mod3|lpm_divide_gcm:auto_generated|sign_div_unsign_5nh:divider|alt_u_div_u9f:divider ; alt_u_div_u9f       ; work         ;
+;    |lpm_divide:Mod4|                   ; 568 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Mod4                                                                                 ; lpm_divide          ; work         ;
+;       |lpm_divide_6bm:auto_generated|  ; 568 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Mod4|lpm_divide_6bm:auto_generated                                                   ; lpm_divide_6bm      ; work         ;
+;          |sign_div_unsign_rlh:divider| ; 568 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Mod4|lpm_divide_6bm:auto_generated|sign_div_unsign_rlh:divider                       ; sign_div_unsign_rlh ; work         ;
+;             |alt_u_div_a7f:divider|    ; 568 (568)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|lpm_divide:Mod4|lpm_divide_6bm:auto_generated|sign_div_unsign_rlh:divider|alt_u_div_a7f:divider ; alt_u_div_a7f       ; work         ;
+;    |read_cal:comb_5|                   ; 40 (40)             ; 33 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|read_cal:comb_5                                                                                 ; read_cal            ; work         ;
+;    |stopwatch:comb_3|                  ; 118 (118)           ; 64 (64)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |main|stopwatch:comb_3                                                                                ; stopwatch           ; work         ;
 +----------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; read_cal:comb_5|cnt_click[1]          ; Stuck at GND due to stuck port data_in ;
+; tag1[2]~reg0                          ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 2 ;                                        ;
++---------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -259,32 +329,47 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Total registers                              ; 227   ;
+; Number of registers using Synchronous Clear  ; 96    ;
+; Number of registers using Synchronous Load   ; 32    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 149   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |main|keypad:comb_3|l[0]   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |main|read_cal:comb_5|cnt_click[0] ;
+; 3:1                ; 25 bits   ; 50 LEs        ; 25 LEs               ; 25 LEs                 ; Yes        ; |main|read_cal:comb_5|In1[17]      ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; Yes        ; |main|read_cal:comb_5|In1[1]       ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |main|real_seconds[8]              ;
+; 5:1                ; 32 bits   ; 96 LEs        ; 32 LEs               ; 64 LEs                 ; Yes        ; |main|stopwatch:comb_3|seconds[1]  ;
+; 5:1                ; 4 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; Yes        ; |main|keypad:comb_4|row[0]         ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |main|tag1[1]~reg0                 ;
+; 17:1               ; 4 bits    ; 44 LEs        ; 40 LEs               ; 4 LEs                  ; Yes        ; |main|keypad:comb_4|KeypadPress[0] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------+
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: stopwatch:comb_3 ;
++----------------+----------+-----------------------------------+
+; Parameter Name ; Value    ; Type                              ;
++----------------+----------+-----------------------------------+
+; clk_machine    ; 50000000 ; Signed Integer                    ;
++----------------+----------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: keypad:comb_3 ;
+; Parameter Settings for User Entity Instance: keypad:comb_4 ;
 +----------------+----------+--------------------------------+
 ; Parameter Name ; Value    ; Type                           ;
 +----------------+----------+--------------------------------+
-; clk_machine    ; 50000000 ; Signed Integer                 ;
-; delay_debounce ; 500000   ; Signed Integer                 ;
 ; zero           ; 0000     ; Unsigned Binary                ;
 ; one            ; 0001     ; Unsigned Binary                ;
 ; two            ; 0010     ; Unsigned Binary                ;
@@ -301,7 +386,32 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; D              ; 1101     ; Unsigned Binary                ;
 ; hashtag        ; 1110     ; Unsigned Binary                ;
 ; star           ; 1111     ; Unsigned Binary                ;
+; clock_freq     ; 50000000 ; Signed Integer                 ;
+; debounce_time  ; 500000   ; Signed Integer                 ;
 +----------------+----------+--------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div0 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 10             ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_dkm ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -310,14 +420,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------------+----------------+------------------------+
 ; Parameter Name         ; Value          ; Type                   ;
 +------------------------+----------------+------------------------+
-; LPM_WIDTHN             ; 4              ; Untyped                ;
+; LPM_WIDTHN             ; 32             ; Untyped                ;
 ; LPM_WIDTHD             ; 10             ; Untyped                ;
 ; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
 ; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
 ; LPM_PIPELINE           ; 0              ; Untyped                ;
 ; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
 ; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
-; CBXI_PARAMETER         ; lpm_divide_vam ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_gcm ; Untyped                ;
 ; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
 ; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
 ; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
@@ -356,14 +466,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------------+----------------+------------------------+
 ; Parameter Name         ; Value          ; Type                   ;
 +------------------------+----------------+------------------------+
-; LPM_WIDTHN             ; 4              ; Untyped                ;
+; LPM_WIDTHN             ; 32             ; Untyped                ;
 ; LPM_WIDTHD             ; 7              ; Untyped                ;
 ; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
 ; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
 ; LPM_PIPELINE           ; 0              ; Untyped                ;
 ; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
 ; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
-; CBXI_PARAMETER         ; lpm_divide_l9m ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_6bm ; Untyped                ;
 ; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
 ; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
 ; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
@@ -402,14 +512,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------------+----------------+------------------------+
 ; Parameter Name         ; Value          ; Type                   ;
 +------------------------+----------------+------------------------+
-; LPM_WIDTHN             ; 4              ; Untyped                ;
+; LPM_WIDTHN             ; 32             ; Untyped                ;
 ; LPM_WIDTHD             ; 4              ; Untyped                ;
 ; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
 ; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
 ; LPM_PIPELINE           ; 0              ; Untyped                ;
 ; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
 ; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
-; CBXI_PARAMETER         ; lpm_divide_i9m ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_3bm ; Untyped                ;
 ; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
 ; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
 ; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
@@ -420,26 +530,143 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod3 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 10             ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_gcm ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div3 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 10             ; Untyped                ;
+; LPM_WIDTHD             ; 7              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_vim ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Mod4 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 32             ; Untyped                ;
+; LPM_WIDTHD             ; 7              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_6bm ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: lpm_divide:Div4 ;
++------------------------+----------------+------------------------+
+; Parameter Name         ; Value          ; Type                   ;
++------------------------+----------------+------------------------+
+; LPM_WIDTHN             ; 7              ; Untyped                ;
+; LPM_WIDTHD             ; 4              ; Untyped                ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                ;
+; LPM_PIPELINE           ; 0              ; Untyped                ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                ;
+; CBXI_PARAMETER         ; lpm_divide_ihm ; Untyped                ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY             ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY           ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE           ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE         ;
++------------------------+----------------+------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "read_cal:comb_5"                                                                                                                                  ;
++--------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port   ; Type  ; Severity ; Details                                                                                                                                          ;
++--------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+; number ; Input ; Warning  ; Input port expression (4 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "number[31..4]" will be connected to GND. ;
++--------+-------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "keypad:comb_4"                                                                                                                          ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                                                                          ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------+
+; KeypadPress ; Output ; Warning  ; Output or bidir port (32 bits) is wider than the port expression (4 bits) it drives; bit(s) "KeypadPress[31..4]" have no fanouts ;
+; pressed     ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                         ;
++-------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 74                          ;
-; cycloneiii_lcell_comb ; 32                          ;
-;     arith             ; 7                           ;
-;         1 data inputs ; 1                           ;
-;         2 data inputs ; 5                           ;
-;         3 data inputs ; 1                           ;
-;     normal            ; 25                          ;
-;         0 data inputs ; 4                           ;
-;         1 data inputs ; 3                           ;
-;         2 data inputs ; 2                           ;
-;         3 data inputs ; 4                           ;
-;         4 data inputs ; 12                          ;
+; boundary_port         ; 124                         ;
+; cycloneiii_ff         ; 227                         ;
+;     ENA               ; 53                          ;
+;     ENA SCLR          ; 64                          ;
+;     ENA SLD           ; 32                          ;
+;     SCLR              ; 32                          ;
+;     plain             ; 46                          ;
+; cycloneiii_io_obuf    ; 5                           ;
+; cycloneiii_lcell_comb ; 4104                        ;
+;     arith             ; 1205                        ;
+;         2 data inputs ; 185                         ;
+;         3 data inputs ; 1020                        ;
+;     normal            ; 2899                        ;
+;         0 data inputs ; 167                         ;
+;         1 data inputs ; 26                          ;
+;         2 data inputs ; 1629                        ;
+;         3 data inputs ; 80                          ;
+;         4 data inputs ; 997                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.30                        ;
-; Average LUT depth     ; 4.41                        ;
+; Max LUT depth         ; 76.00                       ;
+; Average LUT depth     ; 62.71                       ;
 +-----------------------+-----------------------------+
 
 
@@ -448,7 +675,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:03     ;
 +----------------+--------------+
 
 
@@ -458,188 +685,165 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Tue Apr  4 14:48:45 2023
+    Info: Processing started: Wed Apr 12 10:59:38 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off main -c main
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file stopwatch.v
+    Info (12023): Found entity 1: stopwatch File: /home/lypess/Documentos/stopwatch-calculator/src/stopwatch.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file calculator.v
-    Info (12023): Found entity 1: calculator File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/calculator.v Line: 1
+    Info (12023): Found entity 1: calculator File: /home/lypess/Documentos/stopwatch-calculator/src/calculator.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file main.v
-    Info (12023): Found entity 1: main File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 1
+    Info (12023): Found entity 1: main File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file display.v
-    Info (12023): Found entity 1: display File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/display.v Line: 1
+    Info (12023): Found entity 1: display File: /home/lypess/Documentos/stopwatch-calculator/src/display.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file keypad.v
-    Info (12023): Found entity 1: keypad File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file test_script.v
-    Info (12023): Found entity 1: test_script File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/test_script.v Line: 1
-Critical Warning (10846): Verilog HDL Instantiation warning at main.v(17): instance has no name File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 17
-Critical Warning (10846): Verilog HDL Instantiation warning at main.v(31): instance has no name File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 31
-Critical Warning (10846): Verilog HDL Instantiation warning at main.v(32): instance has no name File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 32
-Critical Warning (10846): Verilog HDL Instantiation warning at main.v(33): instance has no name File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 33
-Critical Warning (10846): Verilog HDL Instantiation warning at main.v(34): instance has no name File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 34
+    Info (12023): Found entity 1: keypad File: /home/lypess/Documentos/stopwatch-calculator/src/keypad.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file read_cal.v
+    Info (12023): Found entity 1: read_cal File: /home/lypess/Documentos/stopwatch-calculator/src/read_cal.v Line: 1
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(35): instance has no name File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 35
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(36): instance has no name File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 36
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(37): instance has no name File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 37
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(65): instance has no name File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 65
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(66): instance has no name File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 66
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(67): instance has no name File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 67
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(68): instance has no name File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 68
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(71): instance has no name File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 71
+Critical Warning (10846): Verilog HDL Instantiation warning at main.v(72): instance has no name File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 72
 Info (12127): Elaborating entity "main" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at main.v(25): truncated value with size 32 to match size of target (4) File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 25
-Warning (10230): Verilog HDL assignment warning at main.v(26): truncated value with size 32 to match size of target (4) File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 26
-Warning (10230): Verilog HDL assignment warning at main.v(27): truncated value with size 32 to match size of target (4) File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 27
-Warning (10230): Verilog HDL assignment warning at main.v(28): truncated value with size 32 to match size of target (4) File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 28
-Warning (10034): Output port "seconds" at main.v(3) has no driver File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 3
-Info (12128): Elaborating entity "keypad" for hierarchy "keypad:comb_3" File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 17
-Warning (10036): Verilog HDL or VHDL warning at keypad.v(11): object "cnt_clk" assigned a value but never read File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 11
-Warning (10230): Verilog HDL assignment warning at keypad.v(43): truncated value with size 32 to match size of target (3) File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 43
-Warning (10230): Verilog HDL assignment warning at keypad.v(44): truncated value with size 32 to match size of target (3) File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 44
-Warning (10030): Net "COLUMN" at keypad.v(4) has no driver or initial value, using a default initial value '0' File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 4
-Warning (10030): Net "keypad_.data_a" at keypad.v(15) has no driver or initial value, using a default initial value '0' File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 15
-Warning (10030): Net "keypad_.waddr_a" at keypad.v(15) has no driver or initial value, using a default initial value '0' File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 15
-Warning (10030): Net "keypad_.we_a" at keypad.v(15) has no driver or initial value, using a default initial value '0' File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 15
-Warning (10034): Output port "led" at keypad.v(7) has no driver File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 7
-Info (12128): Elaborating entity "display" for hierarchy "display:comb_10" File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 31
-Info (276014): Found 1 instances of uninferred RAM logic
-    Info (276004): RAM logic "keypad:comb_3|keypad_" is uninferred due to inappropriate RAM size File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/keypad.v Line: 15
-Info (278001): Inferred 5 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 26
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1" File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 26
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1" File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 27
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div2" File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 27
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod2" File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 28
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0" File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 26
-Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter: File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 26
-    Info (12134): Parameter "LPM_WIDTHN" = "4"
+Warning (10230): Verilog HDL assignment warning at main.v(55): truncated value with size 32 to match size of target (4) File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 55
+Warning (10230): Verilog HDL assignment warning at main.v(56): truncated value with size 32 to match size of target (4) File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 56
+Warning (10230): Verilog HDL assignment warning at main.v(57): truncated value with size 32 to match size of target (4) File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 57
+Warning (10230): Verilog HDL assignment warning at main.v(58): truncated value with size 32 to match size of target (4) File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 58
+Warning (10230): Verilog HDL assignment warning at main.v(60): truncated value with size 32 to match size of target (4) File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 60
+Warning (10230): Verilog HDL assignment warning at main.v(61): truncated value with size 32 to match size of target (4) File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 61
+Info (12128): Elaborating entity "stopwatch" for hierarchy "stopwatch:comb_3" File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 35
+Warning (10036): Verilog HDL or VHDL warning at stopwatch.v(9): object "m_sec_cnt" assigned a value but never read File: /home/lypess/Documentos/stopwatch-calculator/src/stopwatch.v Line: 9
+Info (12128): Elaborating entity "keypad" for hierarchy "keypad:comb_4" File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 36
+Warning (10230): Verilog HDL assignment warning at keypad.v(37): truncated value with size 32 to match size of target (2) File: /home/lypess/Documentos/stopwatch-calculator/src/keypad.v Line: 37
+Info (12128): Elaborating entity "read_cal" for hierarchy "read_cal:comb_5" File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 37
+Warning (10855): Verilog HDL warning at read_cal.v(11): initial value for variable flag should be constant File: /home/lypess/Documentos/stopwatch-calculator/src/read_cal.v Line: 11
+Warning (10230): Verilog HDL assignment warning at read_cal.v(19): truncated value with size 32 to match size of target (2) File: /home/lypess/Documentos/stopwatch-calculator/src/read_cal.v Line: 19
+Warning (10030): Net "flag" at read_cal.v(8) has no driver or initial value, using a default initial value '0' File: /home/lypess/Documentos/stopwatch-calculator/src/read_cal.v Line: 8
+Info (12128): Elaborating entity "display" for hierarchy "display:comb_225" File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 65
+Info (278001): Inferred 10 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div0" File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 55
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod0" File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 56
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div1" File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 56
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod1" File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 57
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div2" File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 57
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod2" File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 58
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod3" File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 60
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div3" File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 60
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Mod4" File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 61
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Div4" File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 61
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div0" File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 55
+Info (12133): Instantiated megafunction "lpm_divide:Div0" with the following parameter: File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 55
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
     Info (12134): Parameter "LPM_WIDTHD" = "10"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_vam.tdf
-    Info (12023): Found entity 1: lpm_divide_vam File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/db/lpm_divide_vam.tdf Line: 25
-Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_1nh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_1nh File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/db/sign_div_unsign_1nh.tdf Line: 25
-Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_m9f.tdf
-    Info (12023): Found entity 1: alt_u_div_m9f File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/db/alt_u_div_m9f.tdf Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_dkm.tdf
+    Info (12023): Found entity 1: lpm_divide_dkm File: /home/lypess/Documentos/stopwatch-calculator/src/db/lpm_divide_dkm.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_5nh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_5nh File: /home/lypess/Documentos/stopwatch-calculator/src/db/sign_div_unsign_5nh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_u9f.tdf
+    Info (12023): Found entity 1: alt_u_div_u9f File: /home/lypess/Documentos/stopwatch-calculator/src/db/alt_u_div_u9f.tdf Line: 27
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
-    Info (12023): Found entity 1: add_sub_7pc File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/db/add_sub_7pc.tdf Line: 23
+    Info (12023): Found entity 1: add_sub_7pc File: /home/lypess/Documentos/stopwatch-calculator/src/db/add_sub_7pc.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
-    Info (12023): Found entity 1: add_sub_8pc File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/db/add_sub_8pc.tdf Line: 23
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Div1" File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 26
-Info (12133): Instantiated megafunction "lpm_divide:Div1" with the following parameter: File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 26
+    Info (12023): Found entity 1: add_sub_8pc File: /home/lypess/Documentos/stopwatch-calculator/src/db/add_sub_8pc.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod0" File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 56
+Info (12133): Instantiated megafunction "lpm_divide:Mod0" with the following parameter: File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 56
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
+    Info (12134): Parameter "LPM_WIDTHD" = "10"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_gcm.tdf
+    Info (12023): Found entity 1: lpm_divide_gcm File: /home/lypess/Documentos/stopwatch-calculator/src/db/lpm_divide_gcm.tdf Line: 25
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div1" File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 56
+Info (12133): Instantiated megafunction "lpm_divide:Div1" with the following parameter: File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 56
     Info (12134): Parameter "LPM_WIDTHN" = "10"
     Info (12134): Parameter "LPM_WIDTHD" = "7"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_vim.tdf
-    Info (12023): Found entity 1: lpm_divide_vim File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/db/lpm_divide_vim.tdf Line: 25
+    Info (12023): Found entity 1: lpm_divide_vim File: /home/lypess/Documentos/stopwatch-calculator/src/db/lpm_divide_vim.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_nlh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_nlh File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/db/sign_div_unsign_nlh.tdf Line: 25
+    Info (12023): Found entity 1: sign_div_unsign_nlh File: /home/lypess/Documentos/stopwatch-calculator/src/db/sign_div_unsign_nlh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_27f.tdf
-    Info (12023): Found entity 1: alt_u_div_27f File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/db/alt_u_div_27f.tdf Line: 27
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod1" File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 27
-Info (12133): Instantiated megafunction "lpm_divide:Mod1" with the following parameter: File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 27
-    Info (12134): Parameter "LPM_WIDTHN" = "4"
+    Info (12023): Found entity 1: alt_u_div_27f File: /home/lypess/Documentos/stopwatch-calculator/src/db/alt_u_div_27f.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod1" File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 57
+Info (12133): Instantiated megafunction "lpm_divide:Mod1" with the following parameter: File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 57
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
     Info (12134): Parameter "LPM_WIDTHD" = "7"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_l9m.tdf
-    Info (12023): Found entity 1: lpm_divide_l9m File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/db/lpm_divide_l9m.tdf Line: 25
-Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_dkh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_dkh File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/db/sign_div_unsign_dkh.tdf Line: 25
-Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_e4f.tdf
-    Info (12023): Found entity 1: alt_u_div_e4f File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/db/alt_u_div_e4f.tdf Line: 27
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Div2" File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 27
-Info (12133): Instantiated megafunction "lpm_divide:Div2" with the following parameter: File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 27
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_6bm.tdf
+    Info (12023): Found entity 1: lpm_divide_6bm File: /home/lypess/Documentos/stopwatch-calculator/src/db/lpm_divide_6bm.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_rlh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_rlh File: /home/lypess/Documentos/stopwatch-calculator/src/db/sign_div_unsign_rlh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_a7f.tdf
+    Info (12023): Found entity 1: alt_u_div_a7f File: /home/lypess/Documentos/stopwatch-calculator/src/db/alt_u_div_a7f.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Div2" File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 57
+Info (12133): Instantiated megafunction "lpm_divide:Div2" with the following parameter: File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 57
     Info (12134): Parameter "LPM_WIDTHN" = "7"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_ihm.tdf
-    Info (12023): Found entity 1: lpm_divide_ihm File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/db/lpm_divide_ihm.tdf Line: 25
+    Info (12023): Found entity 1: lpm_divide_ihm File: /home/lypess/Documentos/stopwatch-calculator/src/db/lpm_divide_ihm.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_akh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_akh File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/db/sign_div_unsign_akh.tdf Line: 25
+    Info (12023): Found entity 1: sign_div_unsign_akh File: /home/lypess/Documentos/stopwatch-calculator/src/db/sign_div_unsign_akh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_84f.tdf
-    Info (12023): Found entity 1: alt_u_div_84f File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/db/alt_u_div_84f.tdf Line: 27
-Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod2" File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 28
-Info (12133): Instantiated megafunction "lpm_divide:Mod2" with the following parameter: File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 28
-    Info (12134): Parameter "LPM_WIDTHN" = "4"
+    Info (12023): Found entity 1: alt_u_div_84f File: /home/lypess/Documentos/stopwatch-calculator/src/db/alt_u_div_84f.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "lpm_divide:Mod2" File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 58
+Info (12133): Instantiated megafunction "lpm_divide:Mod2" with the following parameter: File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 58
+    Info (12134): Parameter "LPM_WIDTHN" = "32"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_i9m.tdf
-    Info (12023): Found entity 1: lpm_divide_i9m File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/db/lpm_divide_i9m.tdf Line: 25
-Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_7kh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_7kh File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/db/sign_div_unsign_7kh.tdf Line: 25
-Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_24f.tdf
-    Info (12023): Found entity 1: alt_u_div_24f File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/db/alt_u_div_24f.tdf Line: 27
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "seconds[0]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 3
-    Warning (13410): Pin "seconds[1]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 3
-    Warning (13410): Pin "seconds[2]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 3
-    Warning (13410): Pin "seconds[3]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 3
-    Warning (13410): Pin "seconds[4]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 3
-    Warning (13410): Pin "seconds[5]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 3
-    Warning (13410): Pin "seconds[6]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 3
-    Warning (13410): Pin "seconds[7]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 3
-    Warning (13410): Pin "seconds[8]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 3
-    Warning (13410): Pin "seconds[9]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 3
-    Warning (13410): Pin "seconds[10]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 3
-    Warning (13410): Pin "seconds[11]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 3
-    Warning (13410): Pin "seconds[12]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 3
-    Warning (13410): Pin "seconds[13]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 3
-    Warning (13410): Pin "seconds[14]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 3
-    Warning (13410): Pin "seconds[15]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 3
-    Warning (13410): Pin "seconds[16]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 3
-    Warning (13410): Pin "seconds[17]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 3
-    Warning (13410): Pin "seconds[18]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 3
-    Warning (13410): Pin "seconds[19]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 3
-    Warning (13410): Pin "seconds[20]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 3
-    Warning (13410): Pin "seconds[21]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 3
-    Warning (13410): Pin "seconds[22]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 3
-    Warning (13410): Pin "seconds[23]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 3
-    Warning (13410): Pin "seconds[24]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 3
-    Warning (13410): Pin "seconds[25]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 3
-    Warning (13410): Pin "seconds[26]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 3
-    Warning (13410): Pin "seconds[27]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 3
-    Warning (13410): Pin "seconds[28]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 3
-    Warning (13410): Pin "seconds[29]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 3
-    Warning (13410): Pin "seconds[30]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 3
-    Warning (13410): Pin "seconds[31]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 3
-    Warning (13410): Pin "display_centenas[6]" is stuck at VCC File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 4
-    Warning (13410): Pin "display_centenas[5]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 4
-    Warning (13410): Pin "display_centenas[4]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 4
-    Warning (13410): Pin "display_centenas[3]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 4
-    Warning (13410): Pin "display_centenas[2]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 4
-    Warning (13410): Pin "display_centenas[1]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 4
-    Warning (13410): Pin "display_centenas[0]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 4
-    Warning (13410): Pin "display_dezenas[6]" is stuck at VCC File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 5
-    Warning (13410): Pin "display_dezenas[5]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 5
-    Warning (13410): Pin "display_dezenas[4]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 5
-    Warning (13410): Pin "display_dezenas[3]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 5
-    Warning (13410): Pin "display_dezenas[2]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 5
-    Warning (13410): Pin "display_dezenas[1]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 5
-    Warning (13410): Pin "display_dezenas[0]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 5
-    Warning (13410): Pin "display_unidades[6]" is stuck at VCC File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 6
-    Warning (13410): Pin "display_unidades[2]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 6
-    Warning (13410): Pin "display_unidades[1]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 6
-    Warning (13410): Pin "COLLUMMN[0]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 10
-    Warning (13410): Pin "COLLUMMN[1]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 10
-    Warning (13410): Pin "COLLUMMN[2]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 10
-    Warning (13410): Pin "COLLUMMN[3]" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 10
-    Warning (13410): Pin "led" is stuck at GND File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 14
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_3bm.tdf
+    Info (12023): Found entity 1: lpm_divide_3bm File: /home/lypess/Documentos/stopwatch-calculator/src/db/lpm_divide_3bm.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_olh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_olh File: /home/lypess/Documentos/stopwatch-calculator/src/db/sign_div_unsign_olh.tdf Line: 25
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_47f.tdf
+    Info (12023): Found entity 1: alt_u_div_47f File: /home/lypess/Documentos/stopwatch-calculator/src/db/alt_u_div_47f.tdf Line: 27
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13034): The following nodes have both tri-state and non-tri-state drivers
+    Warning (13035): Inserted always-enabled tri-state buffer between "tag1[0]" and its non-tri-state driver. File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 39
+    Warning (13035): Inserted always-enabled tri-state buffer between "tag1[1]" and its non-tri-state driver. File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 39
+    Warning (13035): Inserted always-enabled tri-state buffer between "tag1[2]" and its non-tri-state driver. File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 39
+Warning (13039): The following bidirectional pins have no drivers
+    Warning (13040): bidirectional pin "flag_pressed[0]" has no driver File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 13
+    Warning (13040): bidirectional pin "flag_pressed[1]" has no driver File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 13
+Info (13060): One or more bidirectional pins are fed by always enabled tri-state buffers
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "tag1[0]" is moved to its source File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 39
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "tag1[1]" is moved to its source File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 39
+    Info (13061): Fan-out of permanently enabled tri-state buffer feeding bidirectional pin "tag1[2]" is moved to its source File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 39
+Warning (13009): TRI or OPNDRN buffers permanently enabled
+    Warning (13010): Node "tag1[0]~synth" File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 39
+    Warning (13010): Node "tag1[1]~synth" File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 39
+    Warning (13010): Node "tag1[2]~synth" File: /home/lypess/Documentos/stopwatch-calculator/src/main.v Line: 39
 Info (286030): Timing-Driven Synthesis is running
-Info (144001): Generated suppressed messages file /home/lypess/Documentos/estudos/stopwatch-calculator/src/output_files/main.map.smsg
+Info (144001): Generated suppressed messages file /home/lypess/Documentos/stopwatch-calculator/src/output_files/main.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "clk" File: /home/lypess/Documentos/estudos/stopwatch-calculator/src/main.v Line: 2
-Info (21057): Implemented 101 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 4223 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
-    Info (21059): Implemented 69 output pins
-    Info (21061): Implemented 27 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 76 warnings
-    Info: Peak virtual memory: 436 megabytes
-    Info: Processing ended: Tue Apr  4 14:48:54 2023
-    Info: Elapsed time: 00:00:09
+    Info (21059): Implemented 114 output pins
+    Info (21060): Implemented 5 bidirectional pins
+    Info (21061): Implemented 4099 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 33 warnings
+    Info: Peak virtual memory: 515 megabytes
+    Info: Processing ended: Wed Apr 12 10:59:48 2023
+    Info: Elapsed time: 00:00:10
     Info: Total CPU time (on all processors): 00:00:20
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in /home/lypess/Documentos/estudos/stopwatch-calculator/src/output_files/main.map.smsg.
+The suppressed messages can be found in /home/lypess/Documentos/stopwatch-calculator/src/output_files/main.map.smsg.
 
 
