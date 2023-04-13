@@ -51,7 +51,7 @@ module main(
 			tag1 <= 1;
 		end
 		else if(keyword == 13) begin
-			tag1 <= 0;
+			tag1 <= 0; 
 		end
 	
 		centena <= real_seconds / 1000;
@@ -59,8 +59,8 @@ module main(
 		unidade <= (real_seconds % 100) / 10;
 		dec_seconds <= real_seconds % 10;
 		
-		dezena_rc <= (In1 % 1000) / 100;
-		unidade_rc <= (In1 % 100) / 10;
+		dezena_rc <= In1/ 10;
+		unidade_rc <= In1 % 10;
 	end
 	
 	//modulo cronometro
@@ -74,3 +74,4 @@ module main(
 	display(unidade_rc, display_unidades_rc);	
 	
 endmodule 
+
