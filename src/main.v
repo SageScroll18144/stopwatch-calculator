@@ -33,7 +33,7 @@ module main(
 	end
 	
 	stopwatch(clk, tag1, seconds);
-	keypad(clk, LINE, COLLUMMN, keyword);
+	keypad(clk, LINE, COLLUMMN, keyword, flag_pressed);
 	read_cal(clk, keyword, flag_pressed, In1);
 	
 	always @ (posedge clk) begin
