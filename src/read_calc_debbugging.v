@@ -2,7 +2,7 @@ module read_cal(
 	input clk,
 	input[31:0] number,
 	output reg [31:0] In1, 
-	input [3:0] Col
+	input [1:0] pressed
 );
 	reg released;
 	reg flag_enter1;
@@ -15,17 +15,15 @@ module read_cal(
 		In1 = 0;
 	end
 		
-	always @ (posedge clk) begin
-		if(~&Col) begin
-			if(~released && ~flag_enter1) begin
-				In1 <= 10 * number;
-				flag_enter1 <= 1;
-			end
+	always @ (posedge pressed) begin
+		if(pressed && ~released && ~flag_enter1) begin
+			In1 <= 10 * number;
+			flag_enter1 <= 1;
 		end
 		
-		if(&Col && flag_enter1) released <= 1;
+		if(~pressed && flag_enter1) released <= 1;
 		
-		if(~&Col && released && ~flag_enter2) begin
+		if(pressed && released && ~flag_enter2) begin
 			In1 <= In1 + number;
 			flag_enter2 <= 1;
 		end
