@@ -20,9 +20,14 @@ module calculator(
 			signal <= 0; 
 		end 
 		else if(keyboard == B) begin 
-			answer <= In1 - In2; 
-			if(In2 > In1) begin 
-				signal <= 1; 
+			if(In2 > In1) begin
+				answer <= In2 - In1; 
+				signal <= 1
+			end
+			
+			else begin 
+				answer <= In1 - In2;
+				signal <= 0;
 			end 
 		end 
 		else if(keyboard == C) begin 
