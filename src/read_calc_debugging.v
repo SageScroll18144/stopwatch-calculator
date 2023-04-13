@@ -1,4 +1,4 @@
-module read_cal(
+module read_cal_debugging(
 	input clk,
 	input[31:0] number,
 	input [1:0] pressed,
