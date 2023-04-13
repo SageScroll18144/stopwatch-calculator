@@ -33,16 +33,16 @@ module read_cal_debugging(
 			flag_enter2 <= 1;
 		end
 		
-		else if(number == 14) begin
+		else if(number == 15) begin
 			flag_enter1 <= 0;
 			flag_enter2 <= 0;
 			led1 <= 1;
 			led2 <= 0;
-			flagIn2 <= 1;
+			flagIn2 <= 0;
 			In1 <= 0;
 		end
 		
-		else if(number == 15) begin
+		else if(number == 14) begin
 			flag_enter1 <= 0;
 			flag_enter2 <= 0;
 			led1 <= 0;
@@ -52,4 +52,4 @@ module read_cal_debugging(
 		end
 	end
 		
-endmodule 
+endmodule  
