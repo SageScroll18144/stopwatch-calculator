@@ -36,7 +36,7 @@ module main(
 	
 	stopwatch(clk, tag1, seconds);
 	keypad(clk, LINE, COLLUMMN, keyword, flag_pressed);
-	read_cal(clk, keyword, flag_pressed, In1, In2, led1, led2);
+	read_cal_debugging(clk, keyword, flag_pressed, In1, In2, led1, led2);
 	
 	always @ (posedge clk) begin
 		if(keyword == 11) begin
