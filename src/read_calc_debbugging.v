@@ -1,8 +1,8 @@
 module read_cal(
 	input clk,
 	input[31:0] number,
-	output reg [31:0] In1, 
-	input [1:0] pressed
+	input [1:0] pressed,
+	output reg [31:0] In1
 );
 	reg released;
 	reg flag_enter1;
