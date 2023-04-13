@@ -42,7 +42,7 @@ module main(
 	initial begin
 		tag1 <= 0;
 		real_seconds <= 0;
-		modo = 1;
+		modo = 0;
 	end
 	
 	stopwatch(clk, tag1, seconds);
