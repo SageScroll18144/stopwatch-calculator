@@ -22,7 +22,7 @@ module calculator(
 		else if(keyboard == B) begin 
 			if(In2 > In1) begin
 				answer <= In2 - In1; 
-				signal <= 1
+				signal <= 1;
 			end
 			
 			else begin 
