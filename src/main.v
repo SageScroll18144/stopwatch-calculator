@@ -12,7 +12,9 @@ module main(
 	output [3:0] keyword,
 	inout[1:0] flag_pressed,
 	output[31:0] In1,
-	
+	output[31:0] In2,
+	output led1,
+	output led2,
 	output [0:6] display_dezenas_rc,
 	output [0:6] display_unidades_rc
 );
@@ -34,7 +36,7 @@ module main(
 	
 	stopwatch(clk, tag1, seconds);
 	keypad(clk, LINE, COLLUMMN, keyword, flag_pressed);
-	read_cal(clk, keyword, flag_pressed, In1);
+	read_cal(clk, keyword, flag_pressed, In1, In2, led1, led2);
 	
 	always @ (posedge clk) begin
 		if(keyword == 11) begin
