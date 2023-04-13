@@ -29,7 +29,6 @@ module read_cal(
 			In1 <= In1 + number;
 			flag_enter2 <= 1;
 		end
-		
 	end
 		
 endmodule 
