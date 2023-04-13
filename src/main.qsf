@@ -97,13 +97,6 @@ set_location_assignment PIN_AH25 -to COLLUMMN[3]
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
-set_global_assignment -name VERILOG_FILE stopwatch.v
-set_global_assignment -name VERILOG_FILE calculator.v
-set_global_assignment -name VERILOG_FILE main.v
-set_global_assignment -name VERILOG_FILE display.v
-set_global_assignment -name VERILOG_FILE keypad.v
-set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
-set_global_assignment -name VERILOG_FILE read_cal.v
 set_location_assignment PIN_AA17 -to display_unidades_rc[0]
 set_location_assignment PIN_AB16 -to display_unidades_rc[1]
 set_location_assignment PIN_AA16 -to display_unidades_rc[2]
@@ -118,4 +111,27 @@ set_location_assignment PIN_AH17 -to display_dezenas_rc[3]
 set_location_assignment PIN_AF17 -to display_dezenas_rc[4]
 set_location_assignment PIN_AG18 -to display_dezenas_rc[5]
 set_location_assignment PIN_AA14 -to display_dezenas_rc[6]
+set_location_assignment PIN_AD18 -to display_dezenas_rc2[0]
+set_location_assignment PIN_AC18 -to display_dezenas_rc2[1]
+set_location_assignment PIN_AB18 -to display_dezenas_rc2[2]
+set_location_assignment PIN_AH19 -to display_dezenas_rc2[3]
+set_location_assignment PIN_AG19 -to display_dezenas_rc2[4]
+set_location_assignment PIN_AF18 -to display_dezenas_rc2[5]
+set_location_assignment PIN_AH18 -to display_dezenas_rc2[6]
+set_location_assignment PIN_AB19 -to display_unidades_rc2[0]
+set_location_assignment PIN_AA19 -to display_unidades_rc2[1]
+set_location_assignment PIN_AG21 -to display_unidades_rc2[2]
+set_location_assignment PIN_AH21 -to display_unidades_rc2[3]
+set_location_assignment PIN_AE19 -to display_unidades_rc2[4]
+set_location_assignment PIN_AF19 -to display_unidades_rc2[5]
+set_location_assignment PIN_AE18 -to display_unidades_rc2[6]
+set_location_assignment PIN_H15 -to led1
+set_location_assignment PIN_F15 -to led2
+set_global_assignment -name VERILOG_FILE read_cal.v
+set_global_assignment -name VERILOG_FILE stopwatch.v
+set_global_assignment -name VERILOG_FILE calculator.v
+set_global_assignment -name VERILOG_FILE main.v
+set_global_assignment -name VERILOG_FILE display.v
+set_global_assignment -name VERILOG_FILE keypad.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE Waveform.vwf
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -3,39 +3,135 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -83.476
-TNS   : -2871.623
+Slack : -86.864
+TNS   : -2870.789
+
+Type  : Slow 1200mV 85C Model Setup 'keypad:comb_4|KeypadPress[0]'
+Slack : -6.892
+TNS   : -98.076
+
+Type  : Slow 1200mV 85C Model Setup 'keypad:comb_4|pressed[0]'
+Slack : -4.710
+TNS   : -421.382
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : 0.401
+Slack : 0.402
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'keypad:comb_4|pressed[0]'
+Slack : 0.403
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'keypad:comb_4|KeypadPress[0]'
+Slack : 0.826
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Recovery 'keypad:comb_4|KeypadPress[0]'
+Slack : -4.234
+TNS   : -60.670
+
+Type  : Slow 1200mV 85C Model Removal 'keypad:comb_4|KeypadPress[0]'
+Slack : 0.991
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -294.695
+TNS   : -266.425
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'keypad:comb_4|pressed[0]'
+Slack : -2.333
+TNS   : -144.831
+
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'keypad:comb_4|KeypadPress[0]'
+Slack : 0.329
+TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -75.315
-TNS   : -2592.802
+Slack : -78.441
+TNS   : -2591.240
+
+Type  : Slow 1200mV 0C Model Setup 'keypad:comb_4|KeypadPress[0]'
+Slack : -6.350
+TNS   : -89.183
+
+Type  : Slow 1200mV 0C Model Setup 'keypad:comb_4|pressed[0]'
+Slack : -4.274
+TNS   : -379.204
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
 Slack : 0.353
 TNS   : 0.000
 
+Type  : Slow 1200mV 0C Model Hold 'keypad:comb_4|pressed[0]'
+Slack : 0.355
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'keypad:comb_4|KeypadPress[0]'
+Slack : 0.809
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Recovery 'keypad:comb_4|KeypadPress[0]'
+Slack : -3.785
+TNS   : -55.676
+
+Type  : Slow 1200mV 0C Model Removal 'keypad:comb_4|KeypadPress[0]'
+Slack : 1.095
+TNS   : 0.000
+
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -294.695
+TNS   : -266.425
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'keypad:comb_4|pressed[0]'
+Slack : -2.333
+TNS   : -144.831
+
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'keypad:comb_4|KeypadPress[0]'
+Slack : 0.380
+TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -40.697
-TNS   : -1315.022
+Slack : -42.301
+TNS   : -1301.696
+
+Type  : Fast 1200mV 0C Model Setup 'keypad:comb_4|KeypadPress[0]'
+Slack : -2.887
+TNS   : -41.685
+
+Type  : Fast 1200mV 0C Model Setup 'keypad:comb_4|pressed[0]'
+Slack : -1.891
+TNS   : -157.460
+
+Type  : Fast 1200mV 0C Model Hold 'keypad:comb_4|KeypadPress[0]'
+Slack : 0.149
+TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
+Slack : 0.181
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'keypad:comb_4|pressed[0]'
+Slack : 0.182
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Recovery 'keypad:comb_4|KeypadPress[0]'
+Slack : -1.857
+TNS   : -24.596
+
+Type  : Fast 1200mV 0C Model Removal 'keypad:comb_4|KeypadPress[0]'
 Slack : 0.180
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -244.191
+TNS   : -220.514
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'keypad:comb_4|pressed[0]'
+Slack : -1.000
+TNS   : -107.000
+
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'keypad:comb_4|KeypadPress[0]'
+Slack : 0.277
+TNS   : 0.000
 
 ------------------------------------------------------------

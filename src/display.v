@@ -15,6 +15,7 @@ module display(
 			8: hex = 7'b0000000;
 			9: hex = 7'b0000100;
 			0: hex = 7'b0000001;
+			10: hex = 7'b1111110;
 			default: hex = 7'b1111111;
 		endcase
 	end

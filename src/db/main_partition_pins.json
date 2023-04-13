@@ -132,6 +132,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "signal",
+					"strict" : false
+				},
+				{
 					"name" : "display_centenas[6]",
 					"strict" : false
 				},
@@ -241,6 +245,134 @@
 				},
 				{
 					"name" : "display_m_seconds[0]",
+					"strict" : false
+				},
+				{
+					"name" : "answer[0]",
+					"strict" : false
+				},
+				{
+					"name" : "answer[1]",
+					"strict" : false
+				},
+				{
+					"name" : "answer[2]",
+					"strict" : false
+				},
+				{
+					"name" : "answer[3]",
+					"strict" : false
+				},
+				{
+					"name" : "answer[4]",
+					"strict" : false
+				},
+				{
+					"name" : "answer[5]",
+					"strict" : false
+				},
+				{
+					"name" : "answer[6]",
+					"strict" : false
+				},
+				{
+					"name" : "answer[7]",
+					"strict" : false
+				},
+				{
+					"name" : "answer[8]",
+					"strict" : false
+				},
+				{
+					"name" : "answer[9]",
+					"strict" : false
+				},
+				{
+					"name" : "answer[10]",
+					"strict" : false
+				},
+				{
+					"name" : "answer[11]",
+					"strict" : false
+				},
+				{
+					"name" : "answer[12]",
+					"strict" : false
+				},
+				{
+					"name" : "answer[13]",
+					"strict" : false
+				},
+				{
+					"name" : "answer[14]",
+					"strict" : false
+				},
+				{
+					"name" : "answer[15]",
+					"strict" : false
+				},
+				{
+					"name" : "answer[16]",
+					"strict" : false
+				},
+				{
+					"name" : "answer[17]",
+					"strict" : false
+				},
+				{
+					"name" : "answer[18]",
+					"strict" : false
+				},
+				{
+					"name" : "answer[19]",
+					"strict" : false
+				},
+				{
+					"name" : "answer[20]",
+					"strict" : false
+				},
+				{
+					"name" : "answer[21]",
+					"strict" : false
+				},
+				{
+					"name" : "answer[22]",
+					"strict" : false
+				},
+				{
+					"name" : "answer[23]",
+					"strict" : false
+				},
+				{
+					"name" : "answer[24]",
+					"strict" : false
+				},
+				{
+					"name" : "answer[25]",
+					"strict" : false
+				},
+				{
+					"name" : "answer[26]",
+					"strict" : false
+				},
+				{
+					"name" : "answer[27]",
+					"strict" : false
+				},
+				{
+					"name" : "answer[28]",
+					"strict" : false
+				},
+				{
+					"name" : "answer[29]",
+					"strict" : false
+				},
+				{
+					"name" : "answer[30]",
+					"strict" : false
+				},
+				{
+					"name" : "answer[31]",
 					"strict" : false
 				},
 				{
@@ -404,6 +536,142 @@
 					"strict" : false
 				},
 				{
+					"name" : "In2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "In2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "In2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "In2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "In2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "In2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "In2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "In2[7]",
+					"strict" : false
+				},
+				{
+					"name" : "In2[8]",
+					"strict" : false
+				},
+				{
+					"name" : "In2[9]",
+					"strict" : false
+				},
+				{
+					"name" : "In2[10]",
+					"strict" : false
+				},
+				{
+					"name" : "In2[11]",
+					"strict" : false
+				},
+				{
+					"name" : "In2[12]",
+					"strict" : false
+				},
+				{
+					"name" : "In2[13]",
+					"strict" : false
+				},
+				{
+					"name" : "In2[14]",
+					"strict" : false
+				},
+				{
+					"name" : "In2[15]",
+					"strict" : false
+				},
+				{
+					"name" : "In2[16]",
+					"strict" : false
+				},
+				{
+					"name" : "In2[17]",
+					"strict" : false
+				},
+				{
+					"name" : "In2[18]",
+					"strict" : false
+				},
+				{
+					"name" : "In2[19]",
+					"strict" : false
+				},
+				{
+					"name" : "In2[20]",
+					"strict" : false
+				},
+				{
+					"name" : "In2[21]",
+					"strict" : false
+				},
+				{
+					"name" : "In2[22]",
+					"strict" : false
+				},
+				{
+					"name" : "In2[23]",
+					"strict" : false
+				},
+				{
+					"name" : "In2[24]",
+					"strict" : false
+				},
+				{
+					"name" : "In2[25]",
+					"strict" : false
+				},
+				{
+					"name" : "In2[26]",
+					"strict" : false
+				},
+				{
+					"name" : "In2[27]",
+					"strict" : false
+				},
+				{
+					"name" : "In2[28]",
+					"strict" : false
+				},
+				{
+					"name" : "In2[29]",
+					"strict" : false
+				},
+				{
+					"name" : "In2[30]",
+					"strict" : false
+				},
+				{
+					"name" : "In2[31]",
+					"strict" : false
+				},
+				{
+					"name" : "led1",
+					"strict" : false
+				},
+				{
+					"name" : "led2",
+					"strict" : false
+				},
+				{
 					"name" : "display_dezenas_rc[6]",
 					"strict" : false
 				},
@@ -460,6 +728,62 @@
 					"strict" : false
 				},
 				{
+					"name" : "display_dezenas_rc2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "display_dezenas_rc2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "display_dezenas_rc2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "display_dezenas_rc2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "display_dezenas_rc2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "display_dezenas_rc2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "display_dezenas_rc2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "display_unidades_rc2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "display_unidades_rc2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "display_unidades_rc2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "display_unidades_rc2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "display_unidades_rc2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "display_unidades_rc2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "display_unidades_rc2[0]",
+					"strict" : false
+				},
+				{
 					"name" : "tag1[0]",
 					"strict" : false
 				},
@@ -468,11 +792,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "flag_pressed[0]",
+					"name" : "tag1[2]",
 					"strict" : false
 				},
 				{
-					"name" : "flag_pressed[1]",
+					"name" : "flag_pressed[0]",
 					"strict" : false
 				},
 				{
