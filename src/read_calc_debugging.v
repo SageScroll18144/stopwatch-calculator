@@ -9,7 +9,7 @@ module read_cal(
 );
 	reg flag_enter1;
 	reg flag_enter2;
-	reg flagIn2;
+	reg flagIn2;a
 	reg[31:0] cnt = 0;
 	parameter delay_time = 3;
 	
