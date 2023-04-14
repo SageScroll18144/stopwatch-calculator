@@ -37,12 +37,13 @@ module main(
 	reg[3:0] dec_seconds;
 	
 	reg [31:0] real_seconds;
-	
+	reg flag_change_st;
 	
 	initial begin
 		tag1 <= 0;
 		real_seconds <= 0;
-		modo = 1;
+		modo <= 0;
+		flag_change_st <= 0;
 	end
 	
 	stopwatch(clk, tag1, seconds);
@@ -57,9 +58,14 @@ module main(
 			dezena <= 11;
 			unidade <= 11;
 			dec_seconds <= 11;
+			flag_change_st <= 1;
 		end
-		else if(modo && keyword == 13) modo <= 0;
-		
+		else if(modo && keyword == 13) begin
+			modo <= 0;
+			tag1 <= 1;
+			flag_change_st <= 1;
+			real_seconds <= seconds;
+		end
 		if(modo == 0) begin
 			
 			dezena_rc <= 11;
@@ -67,18 +73,21 @@ module main(
 			dezena_rc2 <= 11;
 			unidade_rc2 <= 11;
 			
-			if(keyword == 11) begin
+			if(keyword == 11 || flag_change_st) begin
 				tag1 <= 1;
 				real_seconds <= seconds; 
+				flag_change_st <= 0;
 			end
 			else if(keyword == 10) begin
 				real_seconds <= 0;
+				flag_change_st <= 0;
 				tag1 <= 2;
 			end
 			else if(keyword == 12) begin
+				flag_change_st <= 0;
 				tag1 <= 1;
 			end
-			else if(keyword == 13) begin
+			else if(keyword == 13 && ~flag_change_st) begin
 				tag1 <= 0; 
 			end
 
@@ -94,17 +103,31 @@ module main(
 			unidade_rc2 <= In2 % 10;
 			
 			if(signal) begin
+				
+				flag_change_st <= 0;
+				
 				centena <= 11;
 				dezena <= 10;
 				unidade <= (answer % 100) / 10;
 				dec_seconds <= answer % 10;
 			end
 			else begin	
+			
+				flag_change_st <= 0;
+			
 				centena <= answer / 1000;
 				dezena <= (answer % 1000) / 100;
 				unidade <= (answer % 100) / 10;
 				dec_seconds <= answer % 10;
 			end
+			
+			if(flag_change_st) begin 
+				centena <= 11;
+				dezena <= 11;
+				unidade <= 11;
+				dec_seconds <= 11;
+			end
+			
 		end 
 	end
 	
