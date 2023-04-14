@@ -36,8 +36,14 @@ module read_cal(
 			end
 			
 			else if(~flag_enter2 && flag_enter1 && number < 10) begin
-				if(~flagIn2) In1 <= In1 + number;
-				else In2 <= In2 + number;
+				if(~flagIn2) begin
+					In1 <= In1 + number;
+					led1 <= 0;
+				end
+				else begin
+					In2 <= In2 + number;
+					led2 <= 0;
+				end
 				flag_enter2 <= 1;
 			end
 			
@@ -47,7 +53,6 @@ module read_cal(
 				led1 <= 1;
 				led2 <= 0;
 				flagIn2 <= 0;
-				In1 <= 0;
 			end
 			
 			else if(number == 14) begin
@@ -56,7 +61,6 @@ module read_cal(
 				led1 <= 0;
 				led2 <= 1;
 				flagIn2 <= 1;
-				In2 <= 0;
 			end
 		end
 	end
