@@ -18,6 +18,7 @@ module main(
 	output[31:0] In2,
 	output led1,
 	output led2,
+	output flag_answer,
 	output [0:6] display_dezenas_rc,
 	output [0:6] display_unidades_rc,
 	output [0:6] display_dezenas_rc2,
@@ -30,7 +31,6 @@ module main(
 	reg[3:0] unidade_rc2;
 	
 	reg modo;
-	reg flag_answer;
 	
 	reg[3:0] centena;
 	reg[3:0] dezena;
@@ -44,13 +44,12 @@ module main(
 		tag1 <= 0;
 		real_seconds <= 0;
 		modo = 0;
-		flag_answer = 0;
 	end
 	
 	stopwatch(clk, tag1, seconds);
 	keypad(clk, LINE, COLLUMMN, keyword, flag_pressed);
 	read_cal(clk, keyword, flag_pressed, In1, In2, led1, led2);
-	calculator(In1, In2, keyword, modo, answer, signal);
+	calculator(In1, In2, keyword, modo, answer, signal, flag_answer);
 	
 	always @ (posedge clk) begin
 		if(~modo &&(keyword == 14 || keyword == 15)) modo <= 1; 
@@ -94,7 +93,6 @@ module main(
 				dezena <= 11;
 				unidade <= 11;
 				dec_seconds <= 11;
-				flag_answer <= 1;
 			end
 			
 			else if(~signal) begin	
