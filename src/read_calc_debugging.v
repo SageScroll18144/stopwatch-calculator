@@ -1,4 +1,4 @@
-module read_cal_debugging(
+module read_cal(
 	input clk,
 	input[31:0] number,
 	input [1:0] pressed,
@@ -11,7 +11,7 @@ module read_cal_debugging(
 	reg flag_enter2;
 	reg flagIn2;
 	reg[31:0] cnt = 0;
-	parameter delay_time = 2;
+	parameter delay_time = 3;
 	
 	initial begin
 		flag_enter1 = 0;
@@ -36,8 +36,14 @@ module read_cal_debugging(
 			end
 			
 			else if(~flag_enter2 && flag_enter1 && number < 10) begin
-				if(~flagIn2) In1 <= In1 + number;
-				else In2 <= In2 + number;
+				if(~flagIn2) begin
+					In1 <= In1 + number;
+					led1 <= 0;
+				end
+				else begin
+					In2 <= In2 + number;
+					led2 <= 0;
+				end
 				flag_enter2 <= 1;
 			end
 			
@@ -47,7 +53,6 @@ module read_cal_debugging(
 				led1 <= 1;
 				led2 <= 0;
 				flagIn2 <= 0;
-				In1 <= 0;
 			end
 			
 			else if(number == 14) begin
@@ -56,7 +61,6 @@ module read_cal_debugging(
 				led1 <= 0;
 				led2 <= 1;
 				flagIn2 <= 1;
-				In2 <= 0;
 			end
 		end
 	end
